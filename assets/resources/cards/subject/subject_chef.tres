@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://cw85hbieefk01"]
+
+[ext_resource type="Script" path="res://assets/scripts/card_resource.gd" id="1_x81la"]
+
+[resource]
+script = ExtResource("1_x81la")
+cardType = 1
+cardName = "Chef"
+combatibleCards = Array[ExtResource("1_x81la")]([])
+incombatibleCards = Array[ExtResource("1_x81la")]([])

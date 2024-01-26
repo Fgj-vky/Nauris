@@ -4,9 +4,10 @@ class_name Card
 @export var sprite: TextureRect
 
 @export var riseAmount: float
-
 var offsetPos: Vector2
 var originalPos: Vector2
+
+@onready var textLabel = $Label
 
 var resource:CardResource
 
@@ -35,4 +36,11 @@ func _on_texture_button_pressed():
 
 func SetCardInfo(cardResource:CardResource):
 	resource = cardResource
-	pass
+	textLabel.text = resource.cardName
+	match resource.cardType:
+		CardResource.CardType.PunchLine:
+			modulate = Color.GREEN
+		CardResource.CardType.Theme:
+			modulate = Color.RED
+		CardResource.CardType.Subject:
+			modulate = Color.BLUE

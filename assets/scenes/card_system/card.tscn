@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcwnoqyuslh3y"]
+[gd_scene load_steps=3 format=3 uid="uid://dcwnoqyuslh3y"]
 
 [ext_resource type="Texture2D" uid="uid://dab62hlqyfuky" path="res://assets/sprites/card_placeholder.png" id="1_16a6x"]
+[ext_resource type="Script" path="res://assets/scripts/card.gd" id="1_rrujs"]
 
 [node name="Card" type="Node2D"]
+script = ExtResource("1_rrujs")
 
 [node name="Updated-prepaid-mastercard-card1280x720" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_16a6x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -63.0
+offset_right = 35.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fuck you"

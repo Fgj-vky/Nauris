@@ -22,6 +22,7 @@ heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")
 rotationLimit = 15.0
 fanHeight = 100.0
+resourcePath = "res://assets/resources/cards"
 
 [node name="InputController" parent="." instance=ExtResource("2_7eall")]
 mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"

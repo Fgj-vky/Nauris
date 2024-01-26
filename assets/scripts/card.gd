@@ -7,7 +7,6 @@ extends Node2D
 var offsetPos: Vector2
 var originalPos: Vector2
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	originalPos = sprite.position

@@ -7,6 +7,9 @@ var cards = []
 @export var fanLimit: float
 
 @export var heightCurve: Curve
+@export var rotationCurve: Curve
+
+@export var rotationLimit: float
 @export var fanHeight: float
 
 @onready var cardsNode =  $Cards
@@ -29,7 +32,11 @@ func calulcateCardPositions():
 	for i in range(cardCount):
 		var card = cardScene.instantiate()
 		cardsNode.add_child(card)
+		
+		
 		var ratio = i as float / (cardCount - 1)
 		card.position = leftLimit + fanTravelVector * ratio
 		card.position += Vector2(0, -heightCurve.sample(ratio) * fanHeight)
+		
+		card.rotation = deg_to_rad(rotationCurve.sample(ratio) * rotationLimit)
 		cards.append(card)

@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://dcwnoqyuslh3y"]
+[gd_scene load_steps=2 format=3 uid="uid://dcwnoqyuslh3y"]
+
+[ext_resource type="Texture2D" uid="uid://dab62hlqyfuky" path="res://assets/sprites/card_placeholder.png" id="1_16a6x"]
 
 [node name="Card" type="Node2D"]
+
+[node name="Updated-prepaid-mastercard-card1280x720" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_16a6x")

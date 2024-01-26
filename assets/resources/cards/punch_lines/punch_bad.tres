@@ -6,5 +6,5 @@
 script = ExtResource("1_b05yp")
 cardType = 2
 cardName = "Bad"
-combatibleCards = Array[ExtResource("1_b05yp")]([])
+combatibleCards = Array[ExtResource("1_b05yp")]([null])
 incombatibleCards = Array[ExtResource("1_b05yp")]([])

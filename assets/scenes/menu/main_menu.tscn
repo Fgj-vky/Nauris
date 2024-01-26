@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6kd5v6i2kfl8"]
 
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
-[ext_resource type="Script" path="res://assets/scenes/menu/InputController.gd" id="2_xs2gx"]
+[ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,8 +45,8 @@ offset_bottom = 0.0799561
 theme_override_font_sizes/font_size = 50
 text = "Bye"
 
-[node name="InputController" type="Node" parent="."]
-script = ExtResource("2_xs2gx")
+[node name="InputController" parent="." instance=ExtResource("2_owcbj")]
+shouldEscQuit = true
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

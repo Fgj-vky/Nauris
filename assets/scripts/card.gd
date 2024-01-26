@@ -36,7 +36,7 @@ func _on_texture_button_pressed():
 
 func SetCardInfo(cardResource:CardResource):
 	resource = cardResource
-	#textLabel.text = resource.cardName
+	textLabel.text = resource.cardName
 	match resource.cardType:
 		CardResource.CardType.PunchLine:
 			modulate = Color.GREEN

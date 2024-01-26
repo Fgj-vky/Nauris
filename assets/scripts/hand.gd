@@ -40,7 +40,9 @@ func calulcateCardPositions():
 	var rightLimit: Vector2 = Vector2(fanLimit, 0)
 	var fanTravelVector = rightLimit - leftLimit
 	for i in range(cardCount):
-		var card = cards[i]
+		var card = cardScene.instantiate()
+		cardsNode.add_child(card)
+		#var card = cards[i]
 		
 		var ratio = i as float / (cardCount - 1)
 		card.position = leftLimit + fanTravelVector * ratio

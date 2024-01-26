@@ -8,6 +8,8 @@ class_name Card
 var offsetPos: Vector2
 var originalPos: Vector2
 
+var resource:CardResource
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	originalPos = sprite.position
@@ -30,3 +32,7 @@ func _on_texture_rect_mouse_exited():
 
 func _on_texture_button_pressed():
 	print("card clicked")
+
+func SetCardInfo(cardResource:CardResource):
+	resource = cardResource
+	pass

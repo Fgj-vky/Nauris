@@ -39,4 +39,5 @@ func calulcateCardPositions():
 		card.position += Vector2(0, -heightCurve.sample(ratio) * fanHeight)
 		
 		card.rotation = deg_to_rad(rotationCurve.sample(ratio) * rotationLimit)
+		
 		cards.append(card)

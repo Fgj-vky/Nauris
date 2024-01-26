@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://dgftit523hlf5"]
+
+[ext_resource type="Script" path="res://assets/scripts/card_resource.gd" id="1_pne5n"]
+
+[resource]
+script = ExtResource("1_pne5n")
+cardType = 2
+cardName = "Smells"
+combatibleCards = Array[ExtResource("1_pne5n")]([])
+incombatibleCards = Array[ExtResource("1_pne5n")]([])

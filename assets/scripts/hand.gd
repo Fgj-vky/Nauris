@@ -22,11 +22,14 @@ var cardScene: PackedScene = preload("res://assets/scenes/card_system/card.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	calulcateCardPositions()
 	dir_contents(resourcePath)
 	for card in cardResources:
 		print(card.cardName)
-
+	for i in range(cardCount):
+		var card = cardScene.instantiate()
+		cardsNode.add_child(card)
+		card = card as Card
+	calulcateCardPositions()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -37,9 +40,7 @@ func calulcateCardPositions():
 	var rightLimit: Vector2 = Vector2(fanLimit, 0)
 	var fanTravelVector = rightLimit - leftLimit
 	for i in range(cardCount):
-		var card = cardScene.instantiate()
-		cardsNode.add_child(card)
-		
+		var card = cards[i]
 		
 		var ratio = i as float / (cardCount - 1)
 		card.position = leftLimit + fanTravelVector * ratio

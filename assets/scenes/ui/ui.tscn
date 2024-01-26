@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://k2vwkfocdy64"]
+
+[ext_resource type="PackedScene" uid="uid://dtr13loi2crgk" path="res://assets/scenes/card_system/card_slot.tscn" id="1_xwr8n"]
+
+[node name="Ui" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -804.0
+offset_top = -263.0
+offset_right = -220.0
+offset_bottom = 263.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -92.5
+offset_right = 95.0
+offset_bottom = 92.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CardSlot" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
+layout_mode = 2
+
+[node name="CardSlot2" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
+layout_mode = 2
+
+[node name="CardSlot3" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
+layout_mode = 2

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dtr13loi2crgk"]
+
+[node name="CardSlot" type="Panel"]
+custom_minimum_size = Vector2(50, 100)
+anchors_preset = -1
+anchor_right = 0.026
+anchor_bottom = 0.093
+offset_right = -49.92
+offset_bottom = -100.44
+size_flags_horizontal = 4
+size_flags_vertical = 4

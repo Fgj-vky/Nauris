@@ -26,6 +26,7 @@ texture = ExtResource("1_16a6x")
 expand_mode = 3
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
 offset_top = 1.0
 offset_right = 142.0
 offset_bottom = 80.0

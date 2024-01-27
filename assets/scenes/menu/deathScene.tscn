@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpdo54xhyo0cm"]
+[gd_scene load_steps=3 format=3 uid="uid://bb7u2mcc7bl22"]
 
 [ext_resource type="Script" path="res://assets/scenes/menu/deathScene.gd" id="1_lndql"]
 [ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_uy0tq"]

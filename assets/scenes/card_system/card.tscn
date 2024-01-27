@@ -21,7 +21,7 @@ offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.17, 0.17)
-pivot_offset = Vector2(320, 490)
+pivot_offset = Vector2(320, 480)
 texture = ExtResource("2_vskv2")
 expand_mode = 3
 

@@ -1,13 +1,16 @@
 extends Node2D
 
 @export var king: King
-var time = 10.0 # time in seconds left 
+var time = 120.0 # time in seconds left 
 var levelActive = true
 
 var score:int
 @export var scoreMultiplier:int
 
 @onready var global = $"/root/Global" as Globals
+
+@export_file var loseScene:String
+@export_file var nexDayScene:String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,7 +42,8 @@ func addScore(amout:float):
 
 func win():
 	print("You win")
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(nexDayScene)
 	
 func lose():
 	print("You lose")
+	get_tree().change_scene_to_file(loseScene)

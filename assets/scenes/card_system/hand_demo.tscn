@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="1_4hbwc"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_7eall"]
-[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/outside.png" id="2_7um1p"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_7um1p"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="3_ef0dx"]
 [ext_resource type="Texture2D" uid="uid://gevac17ucoth" path="res://assets/sprites/throne_room.png" id="4_uir2q"]
 [ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="5_gfc1e"]
@@ -76,3 +76,5 @@ moodDecayAmount = 0.1
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("6_wn3x4")]
 king = NodePath("../King")
 scoreMultiplier = 100
+loseScene = "res://assets/scenes/menu/deathScene.tscn"
+nexDayScene = "res://assets/scenes/menu/dayCompleteScene.tscn"

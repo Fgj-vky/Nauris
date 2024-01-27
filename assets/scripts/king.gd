@@ -25,6 +25,8 @@ func _process(delta):
 		moodFrame = 5 - (round(4 * mood)) as int
 		kingSprite.frame = moodFrame	
 		moodTimer = moodDecayRateInSeconds
+		if(mood <= 0):
+			loseCallback.call()
 	
 func showReaction(frameId: int):
 	print("Reacting " + str(frameId - 5))

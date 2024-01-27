@@ -2,6 +2,7 @@ extends Node
 class_name  Globals
 
 var currentDay:int
+var rtxOn: bool
 
 
 # Called when the node enters the scene tree for the first time.

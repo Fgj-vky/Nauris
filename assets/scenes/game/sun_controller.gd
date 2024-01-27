@@ -1,11 +1,23 @@
 extends DirectionalLight3D
 
+const dayStartDeg: float = 125
+const dayEndDeg: float = -60
+
+var dayProgress: float = 0
+
+var lengthOfDay: float = 120
+@onready var dayTimer = $DayTimer
+
+var rotationStep: float
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	dayTimer.wait_time = lengthOfDay
+	dayTimer.start()
+	
+	rotationStep = (dayStartDeg - dayEndDeg) / (lengthOfDay * 60 * 60)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	rotate_z(delta / 5)
+func _physics_process(delta):
+	rotate_z(rad_to_deg(rotationStep * delta))

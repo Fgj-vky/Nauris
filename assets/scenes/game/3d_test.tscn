@@ -67,11 +67,13 @@ omni_range = 10.524
 omni_attenuation = 0.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="test"]
-transform = Transform3D(0.0213772, 0.545844, 0.837614, 0.872481, -0.419279, 0.250962, 0.48818, 0.725438, -0.485202, 4.98005, 4.66978, -5.86649)
+transform = Transform3D(0.424145, 0.285261, 0.859493, 0.755327, -0.635014, -0.161984, 0.499582, 0.717903, -0.484803, 4.98005, 4.66978, -5.86649)
 light_color = Color(1, 0.933333, 0.890196, 1)
 light_energy = 3.0
 shadow_enabled = true
 script = ExtResource("3_m7ivt")
+
+[node name="DayTimer" type="Timer" parent="test/DirectionalLight3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="test"]
 environment = SubResource("Environment_v5my7")
@@ -79,7 +81,7 @@ environment = SubResource("Environment_v5my7")
 [node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
 
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
-position = Vector2(914, 808)
+position = Vector2(993, 836)
 startingCardCount = 5
 fanLimit = 200.0
 fanLimitCardTarget = 5

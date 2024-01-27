@@ -5,6 +5,7 @@
 .import/
 export.cfg
 export_presets.cfg
+*.tmp
 
 # MacOS DS Store
 .DS_Store

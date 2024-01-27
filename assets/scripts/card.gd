@@ -11,6 +11,10 @@ var originalPos: Vector2
 
 var resource:CardResource
 
+static var redBg = preload("res://assets/sprites/card_red.png")
+static var blueBg = preload("res://assets/sprites/card_blue.png")
+static var greenBg = preload("res://assets/sprites/card_green.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	originalPos = sprite.position
@@ -39,8 +43,8 @@ func SetCardInfo(cardResource:CardResource):
 	textLabel.text = resource.cardName
 	match resource.cardType:
 		CardResource.CardType.PunchLine:
-			modulate = Color.GREEN
+			sprite.texture = greenBg
 		CardResource.CardType.Theme:
-			modulate = Color.RED
+			sprite.texture = redBg
 		CardResource.CardType.Subject:
-			modulate = Color.BLUE
+			sprite.texture = blueBg

@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbk26goaakp73"]
+
+[ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
+[ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
+
+[sub_resource type="Sky" id="Sky_d3vbl"]
+
+[sub_resource type="Environment" id="Environment_v5my7"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_d3vbl")
+reflected_light_source = 1
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="test" parent="." instance=ExtResource("1_058ms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.406)
+
+[node name="Node3D" type="Node3D" parent="test"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260539, 0.0379935)
+script = ExtResource("2_kxbei")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="test/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92035, 5.11796, 0.14916)
+light_color = Color(1, 0.733333, 0.470588, 1)
+omni_range = 10.524
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="test/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05576, 5.11796, 0.14916)
+light_color = Color(1, 0.733333, 0.470588, 1)
+omni_range = 10.524
+omni_attenuation = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="test/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66422, 5.11796, 0.14916)
+light_color = Color(1, 0.733333, 0.470588, 1)
+omni_range = 10.524
+omni_attenuation = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="test/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7479, 5.11796, 0.14916)
+light_color = Color(1, 0.733333, 0.470588, 1)
+omni_range = 10.524
+omni_attenuation = 0.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.74351, 0.636828, 0.204066, 0.457027, 0.261132, 0.850257, 0.48818, 0.725438, -0.485202, 4.98005, 4.66978, -6.27249)
+light_color = Color(1, 0.933333, 0.890196, 1)
+light_energy = 3.0
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v5my7")

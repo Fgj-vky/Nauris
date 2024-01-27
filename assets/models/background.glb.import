@@ -1,0 +1,49 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://nm2yjmj5pun1"
+path="res://.godot/imported/background.glb-302fc190a7565d12fe1dfe65f073673b.scn"
+
+[deps]
+
+source_file="res://assets/models/background.glb"
+dest_files=["res://.godot/imported/background.glb-302fc190a7565d12fe1dfe65f073673b.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"bg": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_main.tres"
+},
+"bg_a": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_alpha.tres"
+},
+"shadow": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_shadow.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

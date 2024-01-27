@@ -16,3 +16,6 @@ mono_crash.*.json
 
 # Ignore Krita autosaves
 *.kra~
+
+# Atte specific ignore
+/addons

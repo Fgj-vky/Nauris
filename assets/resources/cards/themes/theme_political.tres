@@ -8,3 +8,4 @@ cardType = 0
 cardName = "Political"
 combatibleCards = Array[ExtResource("1_6peel")]([])
 incombatibleCards = Array[ExtResource("1_6peel")]([])
+imageIndex = 2

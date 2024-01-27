@@ -8,3 +8,4 @@ cardType = 2
 cardName = "Slip"
 combatibleCards = Array[ExtResource("1_8qjqj")]([])
 incombatibleCards = Array[ExtResource("1_8qjqj")]([])
+imageIndex = 24

@@ -8,3 +8,4 @@ cardType = 0
 cardName = "Dark"
 combatibleCards = Array[ExtResource("1_ljbgq")]([])
 incombatibleCards = Array[ExtResource("1_ljbgq")]([])
+imageIndex = 1

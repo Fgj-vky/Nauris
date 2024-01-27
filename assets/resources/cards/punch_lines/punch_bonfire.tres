@@ -8,3 +8,4 @@ cardType = 2
 cardName = "Bonfire"
 combatibleCards = Array[ExtResource("1_jx717")]([])
 incombatibleCards = Array[ExtResource("1_jx717")]([])
+imageIndex = 25

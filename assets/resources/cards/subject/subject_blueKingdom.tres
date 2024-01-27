@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://dyqsvq37vgrws"]
+
+[ext_resource type="Script" path="res://assets/scripts/card_resource.gd" id="1_bp6xw"]
+
+[resource]
+script = ExtResource("1_bp6xw")
+cardType = 1
+cardName = "Blue Kingdom"
+combatibleCards = Array[ExtResource("1_bp6xw")]([])
+incombatibleCards = Array[ExtResource("1_bp6xw")]([])
+imageIndex = 12

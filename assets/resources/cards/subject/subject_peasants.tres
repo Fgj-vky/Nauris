@@ -8,3 +8,4 @@ cardType = 1
 cardName = "Peasants"
 combatibleCards = Array[ExtResource("1_1qjm1")]([])
 incombatibleCards = Array[ExtResource("1_1qjm1")]([])
+imageIndex = 9

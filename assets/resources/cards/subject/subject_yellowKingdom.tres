@@ -8,3 +8,4 @@ cardType = 1
 cardName = "Yellow Kingdom"
 combatibleCards = Array[ExtResource("1_l8skf")]([])
 incombatibleCards = Array[ExtResource("1_l8skf")]([])
+imageIndex = 11

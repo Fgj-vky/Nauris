@@ -8,3 +8,4 @@ cardType = 1
 cardName = "Religion"
 combatibleCards = Array[ExtResource("1_0e203")]([])
 incombatibleCards = Array[ExtResource("1_0e203")]([])
+imageIndex = 19

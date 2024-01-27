@@ -41,9 +41,9 @@ text = "Fuck you"
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.289063, 0.289063)
-texture = ExtResource("3_bny06")
-hframes = 3
-vframes = 3
+texture = ExtResource("3_rvids")
+hframes = 6
+vframes = 5
 
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

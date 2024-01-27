@@ -11,6 +11,8 @@ var slot3: Card
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
 
+var cardData = preload("res://assets/test.csv").records
+
 func addCardToTable(card: Card): 
 	# Add card to next slot if free
 	if slot1 == null:
@@ -42,7 +44,8 @@ func checkForSpace():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

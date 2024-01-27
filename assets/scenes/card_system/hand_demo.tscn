@@ -75,3 +75,4 @@ moodDecayAmount = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("6_wn3x4")]
 king = NodePath("../King")
+scoreMultiplier = 100

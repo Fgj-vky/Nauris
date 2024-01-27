@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var cardHolder = $Cards
 @export var king: King
 
+@onready var gameController = $"../GameController"
+
 var slot1: Card
 var slot2: Card
 var slot3: Card
@@ -63,7 +65,9 @@ func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
 		king.react(-0.1)
 	else:
-		king.react(calculateMoodScore())
+		var score = 0.1 + calculateMoodScore()
+		king.react(score)
+		gameController.addScore(score)
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()

@@ -11,6 +11,8 @@ var hand: Hand
 
 @onready var textLabel = $Label
 
+var tempCardPosition = null
+
 var resource:CardResource
 
 @onready var iconRect = $Icon
@@ -28,10 +30,11 @@ func _process(delta):
 	pass
 
 func _on_texture_rect_mouse_entered():
-	sprite.z_index = 1000
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite, "position", originalPos - Vector2(0, riseAmount), 0.1)
-	tween.tween_property(sprite, "modulate", Color(0.65,0.73,0.65,1), 0.1)
+	if hand != null:
+		sprite.z_index = 1000
+		var tween = get_tree().create_tween()
+		tween.tween_property(sprite, "position", originalPos - Vector2(0, riseAmount), 0.1)
+		tween.tween_property(sprite, "modulate", Color(0.65,0.73,0.65,1), 0.1)
 
 func _on_texture_rect_mouse_exited():
 	sprite.z_index = 0
@@ -40,8 +43,8 @@ func _on_texture_rect_mouse_exited():
 	tween.tween_property(sprite, "modulate", Color(1,1,1,1), 0.1)
 
 func _on_texture_button_pressed():
-	removeFromHand()
-	print("card clicked")
+	if hand != null:
+		moveToTable()
 
 func SetCardInfo(cardResource:CardResource):
 	resource = cardResource
@@ -58,7 +61,16 @@ func SetCardInfo(cardResource:CardResource):
 func setHand(hand_: Hand):
 	hand = hand_
 	
+func moveToTable():
+	hand.moveCardToTable($'.')
 	
 func removeFromHand():
-	hand.moveCardToTable($'.')
 	hand = null
+
+func tweenToPos(pos: Vector2):
+	var tween = get_tree().create_tween()
+	tween.tween_property($'.', "position", pos, 0.2)
+
+func tweenToRotation(r: float):
+	var tween = get_tree().create_tween()
+	tween.tween_property($'.', "rotation", r, 0.2)

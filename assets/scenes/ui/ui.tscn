@@ -41,8 +41,17 @@ alignment = 1
 [node name="CardSlot" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
 layout_mode = 2
 
+[node name="slotPos1" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot"]
+
 [node name="CardSlot2" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
 layout_mode = 2
 
+[node name="slotPos2" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot2"]
+
 [node name="CardSlot3" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
 layout_mode = 2
+
+[node name="slotPos3" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot3"]
+
+[node name="Cards" type="Node2D" parent="MarginContainer/Panel/HBoxContainer"]
+position = Vector2(-1313, -447.5)

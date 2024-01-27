@@ -50,3 +50,4 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 king = NodePath("../King")
 
 [node name="King" parent="." instance=ExtResource("5_gfc1e")]
+position = Vector2(1613, 534)

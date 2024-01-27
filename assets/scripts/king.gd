@@ -6,6 +6,9 @@ var loseCallback: Callable
 @onready var kingSprite = $KingSprite
 @onready var kingReactionIconSprite = $"SpeeckBuble/King Reaction Icon"
 @onready var speechBubbule = $SpeeckBuble
+@export var jester: Jester
+
+@onready var animation = $AnimationPlayer
 
 var moodFrame = 0
 var mood = 0.5 # Goes from 0.0 to 1.0
@@ -19,6 +22,7 @@ func _ready():
 	moodTimer = moodDecayRateInSeconds
 	kingReactionIconSprite.visible = false
 	speechBubbule.visible = false
+	animation.play("new_animation")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -32,20 +36,24 @@ func _process(delta):
 		if(mood <= 0):
 			loseCallback.call()
 	
-func showReaction(frameId: int, funny: bool):
+func showReaction(frameId: int, funny: int):
 	print("Reacting " + str(frameId - 5))
-	kingReactionIconSprite.visible = true
-	speechBubbule.visible = true
-	print(funny)
-	if !funny:
-		kingReactionIconSprite.frame = 22
-	else:
+	
+	if funny > 0:
+		kingReactionIconSprite.visible = true
+		speechBubbule.visible = true
 		kingReactionIconSprite.frame = 21
+	elif funny < 0:
+		jester.sweat()
+		kingReactionIconSprite.visible = true
+		speechBubbule.visible = true
+		kingReactionIconSprite.frame = 22
 	kingSprite.frame = frameId
 	await get_tree().create_timer(1).timeout
 	kingSprite.frame = moodFrame
 	kingReactionIconSprite.visible = false
 	speechBubbule.visible = false
+	jester.idle()
 	
 	
 func react(moodChange: float):
@@ -60,13 +68,16 @@ func react(moodChange: float):
 	kingSprite.frame = moodFrame
 	
 	var reactionFrame = moodFrame + 5
+	var funny = 0
+	
 	if moodChange > 0:
 		reactionFrame -= 1
+		funny += 1
 	elif moodChange < 0:
 		reactionFrame += 1
+		funny -= 1
 	if (reactionFrame != moodFrame):
 		reactionFrame = max(min(reactionFrame, 10), 6)
-		var funny = moodChange > 0
 		showReaction(reactionFrame, funny)
 	print("Mood frame: " + str(moodFrame))
 	

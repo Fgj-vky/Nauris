@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var king: King
 
 @onready var gameController = $"../GameController"
+@onready var jester: Jester = $"../Jester" as Jester
 
 var slot1: Card
 var slot2: Card
@@ -95,6 +96,9 @@ func calculateMoodScore():
 	return bonus / 10.0
 
 func playCards():
+	
+	jester.speak()
+	
 	slot1.cardPlayed()
 	slot2.cardPlayed()
 	slot3.cardPlayed()

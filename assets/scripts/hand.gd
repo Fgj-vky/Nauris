@@ -7,6 +7,7 @@ var cards: Array[Card] = []
 
 @export var startingCardCount: int
 @export var fanLimit: float
+@export var fanLimitCardTarget: int
 
 @export var heightCurve: Curve
 @export var rotationCurve: Curve
@@ -47,8 +48,10 @@ func calculateCardPositions():
 		cards[0].rotation = 0
 		return
 	
-	var leftLimit: Vector2 =  -Vector2(fanLimit, 0)
-	var rightLimit: Vector2 = Vector2(fanLimit, 0)
+	var fanLimitFactor = min(cards.size() as float / fanLimitCardTarget as float, 1.0)
+	
+	var leftLimit: Vector2 =  -Vector2(fanLimit * fanLimitFactor, 0)
+	var rightLimit: Vector2 = Vector2(fanLimit * fanLimitFactor, 0)
 	var fanTravelVector = rightLimit - leftLimit
 	for i in range(cards.size()):
 		#var card = cardScene.instantiate()

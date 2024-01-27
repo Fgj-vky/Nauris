@@ -32,9 +32,10 @@ texture = ExtResource("4_uir2q")
 expand_mode = 2
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
-position = Vector2(971, 866)
+position = Vector2(968, 982)
 startingCardCount = 5
 fanLimit = 200.0
+fanLimitCardTarget = 5
 heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")
 rotationLimit = 15.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbk26goaakp73"]
+[gd_scene load_steps=18 format=3 uid="uid://bc20xx0au3tl6"]
 
 [ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="8_ei0tl"]
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="9_l4j53"]
 [ext_resource type="PackedScene" uid="uid://ca8btvwtkcmlj" path="res://assets/models/scene_assets/torch_1.tscn" id="10_bkx6e"]
+[ext_resource type="PackedScene" uid="uid://b1babsxkmlsbg" path="res://assets/scenes/jester/jester.tscn" id="12_5qdt7"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7shq6"]
 ground_color = Color(0.952941, 0.913725, 0.87451, 1)
@@ -25,10 +26,6 @@ sky = SubResource("Sky_d3vbl")
 sky_custom_fov = 168.4
 reflected_light_source = 2
 tonemap_mode = 2
-ssr_enabled = true
-ssao_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0056
 
 [sub_resource type="Curve" id="Curve_hoaqa"]
@@ -100,7 +97,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.07424, 4.41625, 0.017
 transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.79085, 4.41625, 0.0173973)
 
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
-position = Vector2(993, 836)
+position = Vector2(968, 982)
 startingCardCount = 5
 fanLimit = 200.0
 fanLimitCardTarget = 5
@@ -116,8 +113,9 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
 king = NodePath("../King")
 
-[node name="King" parent="." instance=ExtResource("8_ei0tl")]
+[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
+jester = NodePath("../Jester")
 moodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 
@@ -126,3 +124,6 @@ position = Vector2(168, 536)
 king = NodePath("../King")
 loseScene = "res://assets/scenes/menu/deathScene.tscn"
 nexDayScene = "res://assets/scenes/menu/dayCompleteScene.tscn"
+
+[node name="Jester" parent="." instance=ExtResource("12_5qdt7")]
+position = Vector2(1276, 793)

@@ -3,6 +3,7 @@ class_name Hand
 
 var cards = []
 
+@onready var ui = $"../Ui"
 
 @export var startingCardCount: int
 @export var fanLimit: float
@@ -34,7 +35,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func calulcateCardPositions():
+func calculateCardPositions():
 	
 	if cards.size() == 1:
 		cards[0].position = Vector2(0,0) 
@@ -74,10 +75,13 @@ func moveCardToTable(card: Card):
 	for i in range(cards.size()):
 		if cards[i] == card:
 			cardIndex = i
-	if cardIndex != null:
+	if cardIndex != null and ui.checkForSpace():
+		card.tempCardPosition = card.global_position
+		card.removeFromHand()
 		cards.remove_at(cardIndex)
 		cardsNode.remove_child(card)
-		calulcateCardPositions()
+		calculateCardPositions()
+		ui.addCardToTable(card)
 	else:
 		# Card could not be added, set its hand back to this
 		card.setHand($'.')
@@ -86,5 +90,5 @@ func addCardToHand(card: Card):
 	cards.append(card)
 	cardsNode.add_child(card)
 	card.setHand($'.')
-	calulcateCardPositions()
+	calculateCardPositions()
 	

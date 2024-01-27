@@ -2,22 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvllgx6xau4hg"
-path.bptc="res://.godot/imported/mountains.png-c3ff15a5a29f24f0a2d9a8b92d12f0a1.bptc.ctex"
+uid="uid://bul8l8fv8yq2a"
+path.s3tc="res://.godot/imported/cam_throne_room.png-c05a7d21eabefda8f484bac2055128c1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/sprites/mountains.png"
-dest_files=["res://.godot/imported/mountains.png-c3ff15a5a29f24f0a2d9a8b92d12f0a1.bptc.ctex"]
+source_file="res://assets/models/cam_throne_room.png"
+dest_files=["res://.godot/imported/cam_throne_room.png-c05a7d21eabefda8f484bac2055128c1.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

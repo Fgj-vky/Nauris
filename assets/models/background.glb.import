@@ -31,6 +31,14 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
+"background": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_fg.tres"
+},
+"background.001": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_bg.tres"
+},
 "bg": {
 "use_external/enabled": true,
 "use_external/path": "res://assets/models/materials/material_main.tres"

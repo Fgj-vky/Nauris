@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://saim2x6odc35"]
+[gd_scene load_steps=10 format=3 uid="uid://saim2x6odc35"]
 
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="1_4hbwc"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_7eall"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_7um1p"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="3_ef0dx"]
 [ext_resource type="Texture2D" uid="uid://gevac17ucoth" path="res://assets/sprites/throne_room.png" id="4_uir2q"]
 [ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="5_gfc1e"]
@@ -22,6 +23,16 @@ point_count = 3
 layer = -1
 follow_viewport_enabled = true
 
+[node name="ColorRect" type="ColorRect" parent="Background"]
+show_behind_parent = true
+z_index = -5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.815686, 0.882353, 1)
+
 [node name="TextureRect" type="TextureRect" parent="Background"]
 show_behind_parent = true
 anchors_preset = 15
@@ -32,6 +43,13 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_uir2q")
 expand_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+show_behind_parent = true
+z_index = -4
+position = Vector2(968, 554)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7um1p")
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
 position = Vector2(968, 982)

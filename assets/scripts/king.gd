@@ -21,7 +21,7 @@ func updateMood(moodChange: float):
 	
 	if mood <= 0:
 		loseCallback.call()
-	
+	updateKingSprite()
 	print("King mood: " + str(mood))
 
 func updateKingSprite():

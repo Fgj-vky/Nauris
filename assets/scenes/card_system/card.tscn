@@ -20,7 +20,7 @@ offset_right = 320.0
 offset_bottom = 480.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.17, 0.17)
+scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(320, 480)
 texture = ExtResource("2_vskv2")
 expand_mode = 3
@@ -32,12 +32,18 @@ offset_bottom = 949.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 0
-offset_left = 114.118
-offset_top = 68.2353
-offset_right = 183.118
-offset_bottom = 91.2353
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = 68.0
+offset_right = -102.0
+offset_bottom = -651.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 text = "Fuck you"
 
 [node name="Icon" type="Sprite2D" parent="TextureRect"]

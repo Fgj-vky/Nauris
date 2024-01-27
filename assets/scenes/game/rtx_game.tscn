@@ -111,7 +111,6 @@ fanHeight = 100.0
 resourcePath = "res://assets/resources/cards"
 
 [node name="InputController" parent="." instance=ExtResource("6_ficd1")]
-shouldEscQuit = true
 mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]

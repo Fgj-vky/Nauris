@@ -5,7 +5,7 @@ extends CanvasLayer
 var slot1: Card
 var slot2: Card
 var slot3: Card
-
+@onready var hand = $"../Hand" as Hand
 @onready var slotPos1 = $MarginContainer/Panel/HBoxContainer/CardSlot/slotPos1
 @onready var slotPos2 = $MarginContainer/Panel/HBoxContainer/CardSlot2/slotPos2
 @onready var slotPos3 = $MarginContainer/Panel/HBoxContainer/CardSlot3/slotPos3
@@ -30,6 +30,19 @@ func addCardToTable(card: Card):
 		card.position = card.tempCardPosition
 		card.tweenToPos(slotPos3.global_position)
 		card.tweenToRotation(0)
+	if slot1 != null && slot2 != null && slot3 != null:
+		if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
+				#return
+				pass
+		slot1.queue_free()
+		slot1 = null
+		slot2.queue_free()
+		slot2 = null
+		slot3.queue_free()
+		slot3 = null
+		hand.createRandomCard()
+		hand.createRandomCard()
+		hand.createRandomCard()
 		
 func checkForSpace():
 	if slot1 == null or slot2 == null or slot3 == null:

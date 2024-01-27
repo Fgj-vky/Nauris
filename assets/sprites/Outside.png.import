@@ -3,24 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5xa53o8bi7rt"
-path.bptc="res://.godot/imported/Outside.png-c99035fa1a717b3bb19095b58f3f08ff.bptc.ctex"
+path="res://.godot/imported/outside.png-bebb58b9b1043c52dd81e174e3090bf0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Outside.png"
-dest_files=["res://.godot/imported/Outside.png-c99035fa1a717b3bb19095b58f3f08ff.bptc.ctex"]
+source_file="res://assets/sprites/outside.png"
+dest_files=["res://.godot/imported/outside.png-bebb58b9b1043c52dd81e174e3090bf0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

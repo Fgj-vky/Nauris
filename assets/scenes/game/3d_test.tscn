@@ -1,9 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbk26goaakp73"]
+[gd_scene load_steps=15 format=3 uid="uid://bbk26goaakp73"]
 
 [ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
 [ext_resource type="PackedScene" uid="uid://blko38lq4krbm" path="res://assets/models/cam.glb" id="3_m6mkc"]
 [ext_resource type="Script" path="res://assets/scenes/game/sun_controller.gd" id="3_m7ivt"]
+[ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="5_wjljr"]
+[ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="6_ficd1"]
+[ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="7_r8a3w"]
+[ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="8_ei0tl"]
+[ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="9_l4j53"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7shq6"]
 ground_color = Color(0.952941, 0.913725, 0.87451, 1)
@@ -18,6 +23,15 @@ sky = SubResource("Sky_d3vbl")
 sky_custom_fov = 168.4
 reflected_light_source = 2
 tonemap_mode = 2
+
+[sub_resource type="Curve" id="Curve_hoaqa"]
+_data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_g8xfq"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 2.74615, 2.74615, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Node3D" type="Node3D"]
 
@@ -52,14 +66,39 @@ light_color = Color(1, 0.733333, 0.470588, 1)
 omni_range = 10.524
 omni_attenuation = 0.5
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.277035, 0.39839, 0.874378, 0.827606, -0.561271, -0.00648539, 0.48818, 0.725438, -0.485202, 4.98005, 4.66978, -6.27249)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="test"]
+transform = Transform3D(0.0213772, 0.545844, 0.837614, 0.872481, -0.419279, 0.250962, 0.48818, 0.725438, -0.485202, 4.98005, 4.66978, -5.86649)
 light_color = Color(1, 0.933333, 0.890196, 1)
 light_energy = 3.0
 shadow_enabled = true
 script = ExtResource("3_m7ivt")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="test"]
 environment = SubResource("Environment_v5my7")
 
-[node name="cam" parent="." instance=ExtResource("3_m6mkc")]
+[node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
+
+[node name="Hand" parent="." instance=ExtResource("5_wjljr")]
+position = Vector2(914, 808)
+startingCardCount = 5
+fanLimit = 200.0
+fanLimitCardTarget = 5
+heightCurve = SubResource("Curve_hoaqa")
+rotationCurve = SubResource("Curve_g8xfq")
+rotationLimit = 15.0
+fanHeight = 100.0
+resourcePath = "res://assets/resources/cards"
+
+[node name="InputController" parent="." instance=ExtResource("6_ficd1")]
+shouldEscQuit = true
+mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
+
+[node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
+king = NodePath("../King")
+
+[node name="King" parent="." instance=ExtResource("8_ei0tl")]
+position = Vector2(1593, 619)
+
+[node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("9_l4j53")]
+position = Vector2(168, 536)
+king = NodePath("../King")

@@ -9,13 +9,13 @@ var originalPos: Vector2
 
 var hand: Hand
 
-@onready var textLabel = $Label
+@onready var textLabel = $TextureRect/Label
 
 var tempCardPosition = null
 
 var resource:CardResource
 
-@onready var iconRect = $Icon
+@onready var iconRect = $TextureRect/Icon
 
 static var redBg = preload("res://assets/sprites/card_red.png")
 static var blueBg = preload("res://assets/sprites/card_blue.png")

@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjkjaws21jax"]
+
+[ext_resource type="Texture2D" uid="uid://cpc5gj3viwcsy" path="res://assets/sprites/torch.png" id="1_httl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8ics"]
+atlas = ExtResource("1_httl1")
+region = Rect2(300, 300, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6i8w"]
+atlas = ExtResource("1_httl1")
+region = Rect2(0, 600, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpxfg"]
+atlas = ExtResource("1_httl1")
+region = Rect2(100, 600, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unfsn"]
+atlas = ExtResource("1_httl1")
+region = Rect2(200, 600, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weyxs"]
+atlas = ExtResource("1_httl1")
+region = Rect2(300, 600, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs2a6"]
+atlas = ExtResource("1_httl1")
+region = Rect2(0, 900, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1fs4"]
+atlas = ExtResource("1_httl1")
+region = Rect2(100, 900, 100, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cm7lo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8ics")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6i8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpxfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unfsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weyxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs2a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1fs4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch2" type="AnimatedSprite3D"]
+shaded = true
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_cm7lo")
+autoplay = "default"
+frame_progress = 0.580707

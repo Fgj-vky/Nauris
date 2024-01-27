@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbk26goaakp73"]
+[gd_scene load_steps=17 format=3 uid="uid://bbk26goaakp73"]
 
 [ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
@@ -6,9 +6,11 @@
 [ext_resource type="Script" path="res://assets/scenes/game/sun_controller.gd" id="3_m7ivt"]
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="5_wjljr"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="6_ficd1"]
+[ext_resource type="PackedScene" uid="uid://bjkjaws21jax" path="res://assets/models/scene_assets/torch_2.tscn" id="6_pmla6"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="7_r8a3w"]
 [ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="8_ei0tl"]
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="9_l4j53"]
+[ext_resource type="PackedScene" uid="uid://ca8btvwtkcmlj" path="res://assets/models/scene_assets/torch_1.tscn" id="10_bkx6e"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7shq6"]
 ground_color = Color(0.952941, 0.913725, 0.87451, 1)
@@ -23,6 +25,11 @@ sky = SubResource("Sky_d3vbl")
 sky_custom_fov = 168.4
 reflected_light_source = 2
 tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0056
 
 [sub_resource type="Curve" id="Curve_hoaqa"]
 _data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
@@ -80,6 +87,18 @@ environment = SubResource("Environment_v5my7")
 
 [node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
 
+[node name="Torch1" parent="test" instance=ExtResource("10_bkx6e")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.97637, 4.47095, 0.110789)
+
+[node name="Torch4" parent="test" instance=ExtResource("10_bkx6e")]
+transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 5.6451, 4.47095, 0.110789)
+
+[node name="Torch2" parent="test" instance=ExtResource("6_pmla6")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.07424, 4.41625, 0.0173973)
+
+[node name="Torch3" parent="test" instance=ExtResource("6_pmla6")]
+transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.79085, 4.41625, 0.0173973)
+
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
 position = Vector2(993, 836)
 startingCardCount = 5
@@ -100,7 +119,11 @@ king = NodePath("../King")
 
 [node name="King" parent="." instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
+moodDecayRateInSeconds = 10.0
+moodDecayAmount = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("9_l4j53")]
 position = Vector2(168, 536)
 king = NodePath("../King")
+loseScene = "res://assets/scenes/menu/deathScene.tscn"
+nexDayScene = "res://assets/scenes/menu/dayCompleteScene.tscn"

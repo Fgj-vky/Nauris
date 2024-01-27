@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://ca8btvwtkcmlj"]
+
+[ext_resource type="Texture2D" uid="uid://cpc5gj3viwcsy" path="res://assets/sprites/torch.png" id="1_370dk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on5yw"]
+atlas = ExtResource("1_370dk")
+region = Rect2(0, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wsj5"]
+atlas = ExtResource("1_370dk")
+region = Rect2(100, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0y2e"]
+atlas = ExtResource("1_370dk")
+region = Rect2(200, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d125j"]
+atlas = ExtResource("1_370dk")
+region = Rect2(300, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aigku"]
+atlas = ExtResource("1_370dk")
+region = Rect2(100, 300, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn640"]
+atlas = ExtResource("1_370dk")
+region = Rect2(200, 300, 100, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp4yj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on5yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wsj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0y2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d125j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aigku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn640")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch1" type="AnimatedSprite3D"]
+shaded = true
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_cp4yj")
+autoplay = "default"

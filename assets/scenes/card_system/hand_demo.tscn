@@ -17,7 +17,7 @@ point_count = 3
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
 position = Vector2(971, 866)
-cardCount = 10
+startingCardCount = 5
 fanLimit = 200.0
 heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")

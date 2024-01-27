@@ -1,9 +1,10 @@
 extends Node2D
+class_name Hand
 
 var cards = []
 
 
-@export var cardCount: int
+@export var startingCardCount: int
 @export var fanLimit: float
 
 @export var heightCurve: Curve
@@ -23,32 +24,36 @@ var cardScene: PackedScene = preload("res://assets/scenes/card_system/card.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dir_contents(resourcePath)
-	for i in range(cardCount):
+	for i in range(startingCardCount):
 		var card = cardScene.instantiate()
-		cards.append(card)
-		cardsNode.add_child(card) 
+		addCardToHand(card)
 		(card as Card).SetCardInfo(cardResources.pick_random())
-	calulcateCardPositions()
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func calulcateCardPositions():
+	
+	if cards.size() == 1:
+		cards[0].position = Vector2(0,0) 
+		cards[0].rotation = 0
+		return
+	
 	var leftLimit: Vector2 =  -Vector2(fanLimit, 0)
 	var rightLimit: Vector2 = Vector2(fanLimit, 0)
 	var fanTravelVector = rightLimit - leftLimit
-	for i in range(cardCount):
+	for i in range(cards.size()):
 		#var card = cardScene.instantiate()
 		#cardsNode.add_child(card)
 		var card = cards[i]
 		
-		var ratio = i as float / (cardCount - 1)
+		var ratio = i as float / (cards.size() - 1)
 		card.position = leftLimit + fanTravelVector * ratio
 		card.position += Vector2(0, -heightCurve.sample(ratio) * fanHeight)
 		
 		card.rotation = deg_to_rad(rotationCurve.sample(ratio) * rotationLimit)
-		cards.append(card)
 
 func dir_contents(path):
 	var dir = DirAccess.open(path)
@@ -63,3 +68,23 @@ func dir_contents(path):
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
+
+func moveCardToTable(card: Card):
+	var cardIndex = null
+	for i in range(cards.size()):
+		if cards[i] == card:
+			cardIndex = i
+	if cardIndex != null:
+		cards.remove_at(cardIndex)
+		cardsNode.remove_child(card)
+		calulcateCardPositions()
+	else:
+		# Card could not be added, set its hand back to this
+		card.setHand($'.')
+	
+func addCardToHand(card: Card):
+	cards.append(card)
+	cardsNode.add_child(card)
+	card.setHand($'.')
+	calulcateCardPositions()
+	

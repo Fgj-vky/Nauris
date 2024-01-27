@@ -45,6 +45,7 @@ offset_left = -20.0
 offset_top = -19.0
 offset_right = 20.0
 offset_bottom = 21.0
+mouse_filter = 2
 
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

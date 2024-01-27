@@ -7,6 +7,8 @@ class_name Card
 var offsetPos: Vector2
 var originalPos: Vector2
 
+var hand: Hand
+
 @onready var textLabel = $Label
 
 var resource:CardResource
@@ -38,6 +40,7 @@ func _on_texture_rect_mouse_exited():
 	tween.tween_property(sprite, "modulate", Color(1,1,1,1), 0.1)
 
 func _on_texture_button_pressed():
+	removeFromHand()
 	print("card clicked")
 
 func SetCardInfo(cardResource:CardResource):
@@ -51,3 +54,11 @@ func SetCardInfo(cardResource:CardResource):
 			sprite.texture = redBg
 		CardResource.CardType.Subject:
 			sprite.texture = blueBg
+			
+func setHand(hand_: Hand):
+	hand = hand_
+	
+	
+func removeFromHand():
+	hand.moveCardToTable($'.')
+	hand = null

@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://k2vwkfocdy64"]
+[gd_scene load_steps=3 format=3 uid="uid://k2vwkfocdy64"]
 
+[ext_resource type="Script" path="res://assets/scenes/ui/ui.gd" id="1_xl6mr"]
 [ext_resource type="PackedScene" uid="uid://dtr13loi2crgk" path="res://assets/scenes/card_system/card_slot.tscn" id="1_xwr8n"]
 
 [node name="Ui" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_xl6mr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 6

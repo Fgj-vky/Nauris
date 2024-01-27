@@ -8,45 +8,49 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 109.0
-offset_top = 24.0
-offset_right = 109.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4y31s")
 gameScene = "res://assets/scenes/card_system/hand_demo.tscn"
 
-[node name="StartGameButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.361
-anchor_top = 0.578
-anchor_right = 0.555
-anchor_bottom = 0.69
-offset_left = 0.879944
-offset_top = -0.23999
-offset_right = 0.400024
-offset_bottom = -0.200073
-theme_override_font_sizes/font_size = 50
-text = "Start Game"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.362
-anchor_top = 0.744
-anchor_right = 0.554
-anchor_bottom = 0.824
-offset_left = 0.959961
-offset_top = -21.52
-offset_right = 0.319946
-offset_bottom = 0.0799561
-theme_override_font_sizes/font_size = 50
-text = "Exit"
-
 [node name="InputController" parent="." instance=ExtResource("2_owcbj")]
 shouldEscQuit = true
 
-[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -347.5
+offset_right = 621.0
+offset_bottom = 347.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+theme_override_font_sizes/font_size = 150
+text = "Long Laugh the King"
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

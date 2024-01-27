@@ -11,6 +11,8 @@ var originalPos: Vector2
 
 var resource:CardResource
 
+@onready var iconRect = $TextureRect2
+
 static var redBg = preload("res://assets/sprites/card_red.png")
 static var blueBg = preload("res://assets/sprites/card_blue.png")
 static var greenBg = preload("res://assets/sprites/card_green.png")
@@ -41,6 +43,7 @@ func _on_texture_button_pressed():
 func SetCardInfo(cardResource:CardResource):
 	resource = cardResource
 	textLabel.text = resource.cardName
+	iconRect.texture = resource.image
 	match resource.cardType:
 		CardResource.CardType.PunchLine:
 			sprite.texture = greenBg

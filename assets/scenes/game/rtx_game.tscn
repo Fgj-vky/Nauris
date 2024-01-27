@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://bc20xx0au3tl6"]
+[gd_scene load_steps=16 format=3 uid="uid://bc20xx0au3tl6"]
 
 [ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
 [ext_resource type="PackedScene" uid="uid://blko38lq4krbm" path="res://assets/models/cam.glb" id="3_m6mkc"]
 [ext_resource type="Script" path="res://assets/scenes/game/sun_controller.gd" id="3_m7ivt"]
+[ext_resource type="Environment" uid="uid://dt158hwqdwbb6" path="res://assets/scenes/game/environment.tres" id="4_fb1sl"]
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="5_wjljr"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="6_ficd1"]
 [ext_resource type="PackedScene" uid="uid://bjkjaws21jax" path="res://assets/models/scene_assets/torch_2.tscn" id="6_pmla6"]
@@ -12,21 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="9_l4j53"]
 [ext_resource type="PackedScene" uid="uid://ca8btvwtkcmlj" path="res://assets/models/scene_assets/torch_1.tscn" id="10_bkx6e"]
 [ext_resource type="PackedScene" uid="uid://b1babsxkmlsbg" path="res://assets/scenes/jester/jester.tscn" id="12_5qdt7"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7shq6"]
-ground_color = Color(0.952941, 0.913725, 0.87451, 1)
-
-[sub_resource type="Sky" id="Sky_d3vbl"]
-sky_material = SubResource("PhysicalSkyMaterial_7shq6")
-
-[sub_resource type="Environment" id="Environment_v5my7"]
-background_mode = 2
-background_energy_multiplier = 2.0
-sky = SubResource("Sky_d3vbl")
-sky_custom_fov = 168.4
-reflected_light_source = 2
-tonemap_mode = 2
-volumetric_fog_density = 0.0056
 
 [sub_resource type="Curve" id="Curve_hoaqa"]
 _data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
@@ -71,7 +57,7 @@ omni_range = 10.524
 omni_attenuation = 0.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="test"]
-transform = Transform3D(0.424145, 0.285261, 0.859493, 0.755327, -0.635014, -0.161984, 0.499582, 0.717903, -0.484803, 4.98005, 4.66978, -5.86649)
+transform = Transform3D(0.424145, 0.285261, 0.859492, 0.755327, -0.635014, -0.161984, 0.499582, 0.717902, -0.484803, 4.98005, 4.66978, -5.86649)
 light_color = Color(1, 0.933333, 0.890196, 1)
 light_energy = 3.0
 shadow_enabled = true
@@ -80,7 +66,7 @@ script = ExtResource("3_m7ivt")
 [node name="DayTimer" type="Timer" parent="test/DirectionalLight3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="test"]
-environment = SubResource("Environment_v5my7")
+environment = ExtResource("4_fb1sl")
 
 [node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
 
@@ -113,9 +99,8 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
 king = NodePath("../King")
 
-[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
+[node name="King" parent="." instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
-jester = NodePath("../Jester")
 moodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 

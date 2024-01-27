@@ -1,0 +1,45 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dad81si6nesoe"
+path="res://.godot/imported/splash.glb-71070ad52732a2a285a310f62abda7fc.scn"
+
+[deps]
+
+source_file="res://assets/models/splash.glb"
+dest_files=["res://.godot/imported/splash.glb-71070ad52732a2a285a310f62abda7fc.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"shadow": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_shadow.tres"
+},
+"splash_buildings": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/materials/material_splash_fg.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

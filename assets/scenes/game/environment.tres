@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dt158hwqdwbb6"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7shq6"]
+ground_color = Color(0.952941, 0.913725, 0.87451, 1)
+
+[sub_resource type="Sky" id="Sky_d3vbl"]
+sky_material = SubResource("PhysicalSkyMaterial_7shq6")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_d3vbl")
+sky_custom_fov = 168.4
+reflected_light_source = 2
+tonemap_mode = 2
+volumetric_fog_density = 0.0056

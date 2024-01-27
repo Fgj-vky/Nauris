@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkl345ud31o6m"]
+
+[ext_resource type="PackedScene" uid="uid://dad81si6nesoe" path="res://assets/models/splash.glb" id="1_gk2a2"]
+[ext_resource type="Environment" uid="uid://dt158hwqdwbb6" path="res://assets/scenes/game/environment.tres" id="2_e8qgq"]
+
+[node name="Splash3d" type="Node3D"]
+
+[node name="splash" parent="." instance=ExtResource("1_gk2a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0329037, 1.73171, -1.77458)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_e8qgq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.655371, -0.173723, 0.735057, 0.0402268, 0.963781, 0.263645, -0.754235, 0.202354, -0.624646, 0, 4.13334, 0)
+shadow_enabled = true

@@ -24,3 +24,6 @@ mono_crash.*.json
 
 # Ignore Blender backups
 *.blend?
+
+# Ignore builds
+build/

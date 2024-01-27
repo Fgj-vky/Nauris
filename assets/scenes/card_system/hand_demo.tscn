@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://saim2x6odc35"]
+[gd_scene load_steps=7 format=3 uid="uid://saim2x6odc35"]
 
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="1_4hbwc"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_7eall"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="3_ef0dx"]
+[ext_resource type="Texture2D" uid="uid://gevac17ucoth" path="res://assets/sprites/throne_room.png" id="4_uir2q"]
 
 [sub_resource type="Curve" id="Curve_b7nxx"]
 _data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
@@ -14,6 +15,21 @@ _data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 2.74615, 2.74615, 0, 0
 point_count = 3
 
 [node name="HandDemo" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_uir2q")
+expand_mode = 2
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
 position = Vector2(971, 866)

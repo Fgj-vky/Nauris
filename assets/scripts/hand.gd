@@ -1,7 +1,7 @@
 extends Node2D
 class_name Hand
 
-var cards = []
+var cards: Array[Card] = []
 
 @onready var ui = $"../Ui"
 
@@ -56,8 +56,9 @@ func calculateCardPositions():
 		var card = cards[i]
 		
 		var ratio = i as float / (cards.size() - 1)
-		card.position = leftLimit + fanTravelVector * ratio
-		card.position += Vector2(0, -heightCurve.sample(ratio) * fanHeight)
+		var pos = leftLimit + fanTravelVector * ratio
+		pos += Vector2(0, -heightCurve.sample(ratio) * fanHeight)
+		card.tweenToPos(pos)
 		
 		card.rotation = deg_to_rad(rotationCurve.sample(ratio) * rotationLimit)
 

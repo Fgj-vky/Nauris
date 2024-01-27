@@ -8,15 +8,15 @@ follow_viewport_enabled = true
 script = ExtResource("1_xl6mr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -804.0
-offset_top = -263.0
-offset_right = -220.0
-offset_bottom = 263.0
+anchors_preset = -1
+anchor_left = 0.581
+anchor_top = 0.256
+anchor_right = 0.885
+anchor_bottom = 0.744
+offset_left = 0.47998
+offset_top = 0.519989
+offset_right = 0.799927
+offset_bottom = -0.52002
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -25,15 +25,13 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = -92.5
-offset_right = 95.0
-offset_bottom = 92.5
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 197.0
+offset_top = 170.5
+offset_right = -197.0
+offset_bottom = -170.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -42,16 +40,19 @@ alignment = 1
 layout_mode = 2
 
 [node name="slotPos1" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot"]
+position = Vector2(35, 50)
 
 [node name="CardSlot2" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
 layout_mode = 2
 
 [node name="slotPos2" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot2"]
+position = Vector2(35, 50)
 
 [node name="CardSlot3" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
 layout_mode = 2
 
 [node name="slotPos3" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot3"]
+position = Vector2(35, 50)
 
 [node name="Cards" type="Node2D" parent="MarginContainer/Panel/HBoxContainer"]
 position = Vector2(-1313, -447.5)

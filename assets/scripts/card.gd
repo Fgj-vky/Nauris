@@ -75,3 +75,12 @@ func tweenToPos(pos: Vector2):
 func tweenToRotation(r: float):
 	var tween = get_tree().create_tween()
 	tween.tween_property($'.', "rotation", r, 0.2)
+
+func cardPlayed():
+	var tween = get_tree().create_tween()
+	var rotationAmount = (randi() % 41 + 10) as float / 100.0
+	var speed = (randi() % 4 + 2) as float / 10.0
+	var dir = 1 if randi() % 2 == 0 else -1
+	tween.tween_property($'.', "rotation", dir * rotationAmount, speed)
+	tween.tween_property($'.', "rotation", dir * -rotationAmount, speed)
+	tween.set_loops()

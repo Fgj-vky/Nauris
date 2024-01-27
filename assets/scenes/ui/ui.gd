@@ -63,5 +63,8 @@ func removeCards():
 	hand.createRandomCard()
 
 func playCards():
+	slot1.cardPlayed()
+	slot2.cardPlayed()
+	slot3.cardPlayed()
 	await get_tree().create_timer(1).timeout
 	removeCards()

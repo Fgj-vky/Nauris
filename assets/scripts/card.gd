@@ -2,6 +2,8 @@ extends Node2D
 class_name Card
 
 @onready var sprite = $TextureRect
+@export var audios: Array[AudioStreamMP3]
+@onready var audioPlayer = $AudioStreamPlayer2D
 
 @export var riseAmount: float
 var offsetPos: Vector2
@@ -31,6 +33,7 @@ func _process(delta):
 
 func _on_texture_rect_mouse_entered():
 	if hand != null:
+		playCardSounds()
 		sprite.z_index = 1000
 		var tween = get_tree().create_tween()
 		tween.tween_property($'.', "position", tempCardPosition - Vector2(0, riseAmount), 0.1)
@@ -44,7 +47,12 @@ func _on_texture_rect_mouse_exited():
 
 func _on_texture_button_pressed():
 	if hand != null:
+		playCardSounds()
 		moveToTable()
+
+func playCardSounds():
+	audioPlayer.stream = audios.pick_random()
+	audioPlayer.play()
 
 func SetCardInfo(cardResource:CardResource):
 	resource = cardResource

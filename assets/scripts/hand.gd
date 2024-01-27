@@ -26,10 +26,15 @@ var cardScene: PackedScene = preload("res://assets/scenes/card_system/card.tscn"
 func _ready():
 	dir_contents(resourcePath)
 	for i in range(startingCardCount):
+		createRandomCard()	
+
+func createCard(resource:CardResource):
 		var card = cardScene.instantiate()
 		addCardToHand(card)
-		(card as Card).SetCardInfo(cardResources.pick_random())
-		
+		(card as Card).SetCardInfo(resource)
+
+func createRandomCard():
+	createCard(cardResources.pick_random())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

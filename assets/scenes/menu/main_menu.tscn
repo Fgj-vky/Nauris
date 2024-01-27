@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://6kd5v6i2kfl8"]
+[gd_scene load_steps=7 format=3 uid="uid://6kd5v6i2kfl8"]
 
+[ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_0v0ld"]
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
 [ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/outside.png" id="2_no7e2"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
-[ext_resource type="Texture2D" uid="uid://c02vbctvflx17" path="res://assets/sprites/button2.png" id="4_340ey"]
 [ext_resource type="Texture2D" uid="uid://bt00vujvfub6o" path="res://assets/sprites/icons_jokes.png" id="4_pqabs"]
-[ext_resource type="Texture2D" uid="uid://dpgj4pflnnefj" path="res://assets/sprites/button1.png" id="5_dim5n"]
 [ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
 
 [node name="MainMenu" type="Control"]
@@ -15,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0v0ld")
 script = ExtResource("1_4y31s")
 gameScene = "res://assets/scenes/card_system/hand_demo.tscn"
 
@@ -34,6 +34,21 @@ texture = ExtResource("2_no7e2")
 [node name="InputController" parent="." instance=ExtResource("2_owcbj")]
 shouldEscQuit = true
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -732.5
+offset_right = 732.5
+offset_bottom = 240.0
+grow_horizontal = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+theme_override_font_sizes/font_size = 150
+text = "Long Laugh the King"
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -41,29 +56,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -621.0
-offset_top = -347.5
-offset_right = 621.0
-offset_bottom = 347.5
+offset_left = -420.0
+offset_top = -157.0
+offset_right = 351.0
+offset_bottom = 330.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
-alignment = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.28
-theme_override_font_sizes/font_size = 150
-text = "Long Laugh the King"
-vertical_alignment = 1
+offset_right = 771.0
+offset_bottom = 487.0
+alignment = 1
 
-[node name="StartGameButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_340ey")
-stretch_mode = 3
+text = "Start Game"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartGameButton"]
 layout_mode = 0
@@ -131,5 +142,5 @@ hframes = 3
 vframes = 3
 frame = 6
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

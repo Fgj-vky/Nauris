@@ -1,0 +1,69 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://be8dl6uo2sx3"]
+
+[ext_resource type="Texture2D" uid="uid://c02vbctvflx17" path="res://assets/sprites/button2.png" id="1_7dt5c"]
+[ext_resource type="FontFile" uid="uid://bhdk14t2ugv3y" path="res://assets/sprites/theme/Font/GloriaHallelujah.ttf" id="1_7ejms"]
+[ext_resource type="Texture2D" uid="uid://dpgj4pflnnefj" path="res://assets/sprites/button1.png" id="2_hbsjd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n7l8r"]
+content_margin_left = 70.0
+content_margin_top = 70.0
+content_margin_right = 70.0
+content_margin_bottom = 70.0
+texture = ExtResource("1_7dt5c")
+texture_margin_left = 70.0
+texture_margin_top = 70.0
+texture_margin_right = 70.0
+texture_margin_bottom = 70.0
+modulate_color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_re5r7"]
+content_margin_left = 70.0
+content_margin_top = 70.0
+content_margin_right = 70.0
+content_margin_bottom = 70.0
+texture = ExtResource("1_7dt5c")
+texture_margin_left = 70.0
+texture_margin_top = 70.0
+texture_margin_right = 70.0
+texture_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_030ob"]
+texture = ExtResource("1_7dt5c")
+texture_margin_left = 70.0
+texture_margin_top = 70.0
+texture_margin_right = 70.0
+texture_margin_bottom = 70.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efa7a"]
+texture = ExtResource("2_hbsjd")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
+expand_margin_left = 60.0
+expand_margin_top = 60.0
+expand_margin_right = 60.0
+expand_margin_bottom = 60.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5je7"]
+texture = ExtResource("2_hbsjd")
+texture_margin_left = 60.0
+texture_margin_top = 60.0
+texture_margin_right = 60.0
+texture_margin_bottom = 60.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_7ejms")
+Button/styles/hover = SubResource("StyleBoxTexture_n7l8r")
+Button/styles/normal = SubResource("StyleBoxTexture_re5r7")
+Button/styles/pressed = SubResource("StyleBoxTexture_030ob")
+Fonts/fonts/normal = ExtResource("1_7ejms")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 37
+Label/fonts/font = ExtResource("1_7ejms")
+Panel/styles/panel = SubResource("StyleBoxTexture_efa7a")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_g5je7")

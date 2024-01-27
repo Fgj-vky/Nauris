@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_0v0ld"]
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
-[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/outside.png" id="2_no7e2"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_no7e2"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
 [ext_resource type="Texture2D" uid="uid://bt00vujvfub6o" path="res://assets/sprites/icons_jokes.png" id="4_pqabs"]
 [ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
@@ -76,34 +76,10 @@ alignment = 1
 layout_mode = 2
 text = "Start Game"
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartGameButton"]
-layout_mode = 0
-offset_left = 664.5
-offset_top = -2.5
-offset_right = 965.5
-offset_bottom = 202.5
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.28
-theme_override_font_sizes/font_size = 50
-text = "Play"
-vertical_alignment = 1
-
-[node name="Button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Exit Button" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("5_dim5n")
-stretch_mode = 3
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Button"]
-layout_mode = 0
-offset_left = 673.5
-offset_top = -3.5
-offset_right = 974.5
-offset_bottom = 201.5
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.28
-theme_override_font_sizes/font_size = 50
-text = "Exit"
-vertical_alignment = 1
+text = "Exit
+"
 
 [node name="IconsJokes" type="Sprite2D" parent="."]
 position = Vector2(1701.51, 212.949)
@@ -143,4 +119,4 @@ vframes = 3
 frame = 6
 
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Exit Button" to="." method="_on_exit_button_pressed"]

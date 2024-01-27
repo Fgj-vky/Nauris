@@ -18,6 +18,10 @@ boot_splash/use_filter=false
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2000
 
+[autoload]
+
+Global="*res://assets/scenes/global/global.tscn"
+
 [display]
 
 window/size/viewport_width=1920

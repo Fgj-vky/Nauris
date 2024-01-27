@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://6kd5v6i2kfl8"]
+[gd_scene load_steps=6 format=3 uid="uid://6kd5v6i2kfl8"]
 
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_no7e2"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
+[ext_resource type="Texture2D" uid="uid://bt00vujvfub6o" path="res://assets/sprites/icons_jokes.png" id="4_pqabs"]
+[ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +15,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4y31s")
 gameScene = "res://assets/scenes/card_system/hand_demo.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.752941, 0.992157, 1)
+
+[node name="Outside" type="Sprite2D" parent="."]
+position = Vector2(921, 702)
+texture = ExtResource("2_no7e2")
 
 [node name="InputController" parent="." instance=ExtResource("2_owcbj")]
 shouldEscQuit = true
@@ -51,6 +67,44 @@ text = "Start Game"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+
+[node name="IconsJokes" type="Sprite2D" parent="."]
+position = Vector2(1744, 286)
+rotation = 0.48567
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 8
+
+[node name="IconsJokes2" type="Sprite2D" parent="."]
+position = Vector2(223, 288)
+rotation = -0.36846
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 8
+
+[node name="IconsJokes3" type="Sprite2D" parent="."]
+position = Vector2(1006, 191)
+rotation = 0.0504194
+scale = Vector2(1, 1)
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 7
+
+[node name="SkyAssets" type="Sprite2D" parent="."]
+position = Vector2(131, 604)
+texture = ExtResource("5_f3x2v")
+hframes = 3
+vframes = 3
+
+[node name="SkyAssets2" type="Sprite2D" parent="."]
+position = Vector2(1884, 26)
+texture = ExtResource("5_f3x2v")
+hframes = 3
+vframes = 3
+frame = 6
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -12,7 +12,7 @@ var slot3: Card
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
 
 var cardDict = {}
-var cardData = preload("res://assets/resources/cards/Book2.csv").records
+var cardData = preload("res://assets/Book2.csv").records
 
 func addCardToTable(card: Card): 
 	# Add card to next slot if free
@@ -80,11 +80,15 @@ func calculateMoodScore():
 	var bonus = 0
 	for card in cards:
 		var resource = (card as Card).resource
-		for cCard in resource.combatibleCards:
-			for otherCard in cards:
-				if((otherCard as Card).resource == cCard):
-					bonus+=	1;
-	return bonus / 10
+		if(!cardDict.has(resource.cardName)): continue
+		var combitables = cardDict[resource.cardName]
+		for com in combitables:
+			for testCard in cards:
+				if((testCard as Card).resource.cardName == com):
+					bonus += 1
+					print("Found combatible cards: " + resource.cardName + " + " + com)
+	#print("bonus: " + bonus/10.0)
+	return bonus / 10.0
 
 func playCards():
 	slot1.cardPlayed()

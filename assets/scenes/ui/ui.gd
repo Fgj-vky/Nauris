@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var cardHolder = $Cards
+@export var king: King
 
 var slot1: Card
 var slot2: Card
@@ -50,8 +51,9 @@ func _process(delta):
 
 func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
-		#return
-		pass
+		king.updateMood(-0.1)
+	else:
+		king.updateMood(calculateMoodScore())
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()
@@ -61,6 +63,18 @@ func removeCards():
 	hand.createRandomCard()
 	hand.createRandomCard()
 	hand.createRandomCard()
+
+func calculateMoodScore():
+	
+	var cards = [slot1, slot2, slot3]
+	var bonus = 0
+	for card in cards:
+		var resource = (card as Card).resource
+		for cCard in resource.combatibleCards:
+			for otherCard in cards:
+				if((otherCard as Card).resource == cCard):
+					bonus+=	1;
+	return bonus / 10
 
 func playCards():
 	slot1.cardPlayed()

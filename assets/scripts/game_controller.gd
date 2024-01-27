@@ -18,7 +18,7 @@ func _process(delta):
 
 func endLevel():
 	levelActive = false
-	if king.moodMeter > 0.25:
+	if king.mood > 0.25:
 		win()
 	else:
 		lose()

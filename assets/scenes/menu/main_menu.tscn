@@ -29,7 +29,7 @@ offset_top = -0.23999
 offset_right = 0.400024
 offset_bottom = -0.200073
 theme_override_font_sizes/font_size = 50
-text = "Fuck you"
+text = "Start Game"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -43,7 +43,7 @@ offset_top = -21.52
 offset_right = 0.319946
 offset_bottom = 0.0799561
 theme_override_font_sizes/font_size = 50
-text = "Bye"
+text = "Exit"
 
 [node name="InputController" parent="." instance=ExtResource("2_owcbj")]
 shouldEscQuit = true

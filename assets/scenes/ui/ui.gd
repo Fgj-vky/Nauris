@@ -11,7 +11,8 @@ var slot3: Card
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
 
-var cardData = preload("res://assets/test.csv").records
+var cardDict = {}
+var cardData = preload("res://assets/resources/cards/Book2.csv").records
 
 func addCardToTable(card: Card): 
 	# Add card to next slot if free
@@ -44,8 +45,14 @@ func checkForSpace():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	formDict()
 	
+func formDict():
+	for data in cardData:
+		if(cardDict.has(data[0])):
+			cardDict[data[0]].append(data[1])
+		else:
+			cardDict[data[0]] = [data[1]]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

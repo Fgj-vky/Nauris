@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for i in range(lights.size()):
-		lights[i].light_energy = lerp(1, 5, ((sin(time + offsets[i]) + 1) / 2))
+		lights[i].light_energy = lerp(1, 3, ((sin(time + offsets[i]) + 1) / 2))
 		time += delta / 3
 		#ffset += randf_range(0.05, 1.0) 
 

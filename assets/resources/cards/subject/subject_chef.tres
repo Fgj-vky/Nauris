@@ -8,3 +8,4 @@ cardType = 1
 cardName = "Chef"
 combatibleCards = Array[ExtResource("1_x81la")]([])
 incombatibleCards = Array[ExtResource("1_x81la")]([])
+imageIndex = 10

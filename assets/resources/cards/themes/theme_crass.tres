@@ -8,3 +8,4 @@ cardType = 0
 cardName = "Crass"
 combatibleCards = Array[ExtResource("1_kb1q2")]([])
 incombatibleCards = Array[ExtResource("1_kb1q2")]([])
+imageIndex = 6

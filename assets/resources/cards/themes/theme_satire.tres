@@ -8,3 +8,4 @@ cardType = 0
 cardName = "Satire"
 combatibleCards = Array[ExtResource("1_0x625")]([])
 incombatibleCards = Array[ExtResource("1_0x625")]([])
+imageIndex = 4

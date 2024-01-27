@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scripts/card.gd" id="1_n5v5k"]
 [ext_resource type="Texture2D" uid="uid://daub04oyjaesr" path="res://assets/sprites/card_blue.png" id="2_vskv2"]
-[ext_resource type="Texture2D" uid="uid://bykuphkrpmsbx" path="res://assets/sprites/icons_pl.png" id="3_bny06"]
+[ext_resource type="Texture2D" uid="uid://ctf04g2e1v0ka" path="res://assets/sprites/icons_jokes.png" id="3_rvids"]
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_n5v5k")
@@ -41,9 +41,9 @@ text = "Fuck you"
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.289063, 0.289063)
-texture = ExtResource("3_bny06")
-hframes = 3
-vframes = 3
+texture = ExtResource("3_rvids")
+hframes = 6
+vframes = 5
 
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://csjqae4t1fqfq"]
+
+[ext_resource type="Script" path="res://assets/scripts/card_resource.gd" id="1_obj3r"]
+
+[resource]
+script = ExtResource("1_obj3r")
+cardType = 1
+cardName = "Guest"
+combatibleCards = Array[ExtResource("1_obj3r")]([])
+incombatibleCards = Array[ExtResource("1_obj3r")]([])
+imageIndex = 20

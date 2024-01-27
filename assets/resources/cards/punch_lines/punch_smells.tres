@@ -8,3 +8,4 @@ cardType = 2
 cardName = "Smells"
 combatibleCards = Array[ExtResource("1_pne5n")]([])
 incombatibleCards = Array[ExtResource("1_pne5n")]([])
+imageIndex = 23

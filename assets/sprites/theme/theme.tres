@@ -33,6 +33,7 @@ texture_margin_left = 70.0
 texture_margin_top = 70.0
 texture_margin_right = 70.0
 texture_margin_bottom = 70.0
+modulate_color = Color(0.772549, 0.772549, 0.772549, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efa7a"]
 texture = ExtResource("2_hbsjd")
@@ -54,8 +55,17 @@ texture_margin_bottom = 60.0
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(1, 1, 1, 1)
-Button/constants/outline_size = 6
+Button/colors/font_focus_color = Color(0.94902, 0.94902, 0.94902, 0)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.305882, 0.305882, 0.305882, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.294118, 0.294118, 0.294118, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0)
+Button/constants/outline_size = 3
 Button/font_sizes/font_size = 50
 Button/fonts/font = ExtResource("1_7ejms")
 Button/styles/hover = SubResource("StyleBoxTexture_n7l8r")

@@ -39,9 +39,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -732.5
-offset_right = 732.5
-offset_bottom = 240.0
+offset_left = -754.0
+offset_right = 754.0
+offset_bottom = 337.0
 grow_horizontal = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.28
@@ -81,25 +81,19 @@ layout_mode = 2
 text = "Exit
 "
 
-[node name="IconsJokes" type="Sprite2D" parent="."]
-position = Vector2(1701.51, 212.949)
-rotation = 0.48567
-texture = ExtResource("4_pqabs")
-hframes = 6
-vframes = 5
-frame = 8
-
 [node name="IconsJokes2" type="Sprite2D" parent="."]
-position = Vector2(180.512, 214.949)
+position = Vector2(98, 106)
 rotation = -0.36846
+scale = Vector2(0.83895, 0.773678)
 texture = ExtResource("4_pqabs")
 hframes = 6
 vframes = 5
 frame = 8
 
 [node name="IconsJokes3" type="Sprite2D" parent="."]
-position = Vector2(957, 149)
-rotation = 0.0504194
+position = Vector2(1604, 101)
+rotation = -0.139641
+scale = Vector2(0.751605, 0.594011)
 texture = ExtResource("4_pqabs")
 hframes = 6
 vframes = 5

@@ -65,7 +65,7 @@ func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
 		king.react(-0.1)
 	else:
-		var score = 0.1 + calculateMoodScore()
+		var score = calculateMoodScore()
 		king.react(score)
 		gameController.addScore(score)
 	slot1.queue_free()

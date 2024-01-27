@@ -4,7 +4,8 @@ class_name King
 var loseCallback: Callable
 
 @onready var kingSprite = $KingSprite
-@onready var kingReactionIconSprite = $"King Reaction Icon"
+@onready var kingReactionIconSprite = $"SpeeckBuble/King Reaction Icon"
+@onready var speechBubbule = $SpeeckBuble
 
 var moodFrame = 0
 var mood = 0.5 # Goes from 0.0 to 1.0
@@ -17,6 +18,7 @@ func _ready():
 	react(0)
 	moodTimer = moodDecayRateInSeconds
 	kingReactionIconSprite.visible = false
+	speechBubbule.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,6 +35,7 @@ func _process(delta):
 func showReaction(frameId: int, funny: bool):
 	print("Reacting " + str(frameId - 5))
 	kingReactionIconSprite.visible = true
+	speechBubbule.visible = true
 	print(funny)
 	if !funny:
 		kingReactionIconSprite.frame = 22
@@ -42,6 +45,7 @@ func showReaction(frameId: int, funny: bool):
 	await get_tree().create_timer(1).timeout
 	kingSprite.frame = moodFrame
 	kingReactionIconSprite.visible = false
+	speechBubbule.visible = false
 	
 	
 func react(moodChange: float):

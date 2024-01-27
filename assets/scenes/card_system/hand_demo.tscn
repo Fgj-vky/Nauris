@@ -70,6 +70,8 @@ king = NodePath("../King")
 
 [node name="King" parent="." instance=ExtResource("5_gfc1e")]
 position = Vector2(1613, 534)
+moodDecayRateInSeconds = 10.0
+moodDecayAmount = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("6_wn3x4")]
 king = NodePath("../King")

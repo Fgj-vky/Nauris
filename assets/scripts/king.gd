@@ -8,13 +8,23 @@ var loseCallback: Callable
 var moodFrame = 0
 var mood = 0.5 # Goes from 0.0 to 1.0
 
+@export var moodDecayRateInSeconds:float
+@export var moodDecayAmount:float
+var moodTimer:float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	react(0)
+	moodTimer = moodDecayRateInSeconds
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	moodTimer -= delta
+	if(moodTimer <= 0):
+		mood -= moodDecayAmount
+		mood = max(min(mood, 1.0), 0.0)
+		moodFrame = 5 - (round(4 * mood)) as int
+		kingSprite.frame = moodFrame	
+		moodTimer = moodDecayRateInSeconds
 	
 func showReaction(frameId: int):
 	print("Reacting " + str(frameId - 5))

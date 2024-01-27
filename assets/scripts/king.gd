@@ -17,6 +17,7 @@ func _process(delta):
 	pass
 	
 func showReaction(frameId: int):
+	print("Reacting " + str(frameId - 5))
 	kingSprite.frame = frameId
 	await get_tree().create_timer(1).timeout
 	kingSprite.frame = moodFrame
@@ -29,16 +30,18 @@ func react(moodChange: float):
 	# 5 vsad :(
 	mood += moodChange
 	mood = max(min(mood, 1.0), 0.0)
+	print(mood)
 	moodFrame = 5 - (round(4 * mood)) as int
 	kingSprite.frame = moodFrame
 	
 	var reactionFrame = moodFrame + 5
-	if moodFrame > 0:
-		reactionFrame += 1
-	elif moodFrame < 0:
+	if moodChange > 0:
 		reactionFrame -= 1
+	elif moodChange < 0:
+		reactionFrame += 1
 	if (reactionFrame != moodFrame):
-		moodFrame = max(min(moodFrame, 1.0), 0.0)
-		showReaction(moodFrame)
+		reactionFrame = max(min(reactionFrame, 10), 6)
+		showReaction(reactionFrame)
+	print("Mood frame: " + str(moodFrame))
 	
 	

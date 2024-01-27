@@ -1,52 +1,133 @@
-[gd_scene load_steps=3 format=3 uid="uid://6kd5v6i2kfl8"]
+[gd_scene load_steps=8 format=3 uid="uid://6kd5v6i2kfl8"]
 
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_no7e2"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
+[ext_resource type="Texture2D" uid="uid://c02vbctvflx17" path="res://assets/sprites/button2.png" id="4_340ey"]
+[ext_resource type="Texture2D" uid="uid://bt00vujvfub6o" path="res://assets/sprites/icons_jokes.png" id="4_pqabs"]
+[ext_resource type="Texture2D" uid="uid://dpgj4pflnnefj" path="res://assets/sprites/button1.png" id="5_dim5n"]
+[ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 109.0
-offset_top = 24.0
-offset_right = 109.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4y31s")
 gameScene = "res://assets/scenes/card_system/hand_demo.tscn"
 
-[node name="StartGameButton" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.361
-anchor_top = 0.578
-anchor_right = 0.555
-anchor_bottom = 0.69
-offset_left = 0.879944
-offset_top = -0.23999
-offset_right = 0.400024
-offset_bottom = -0.200073
-theme_override_font_sizes/font_size = 50
-text = "Fuck you"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.752941, 0.992157, 1)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.362
-anchor_top = 0.744
-anchor_right = 0.554
-anchor_bottom = 0.824
-offset_left = 0.959961
-offset_top = -21.52
-offset_right = 0.319946
-offset_bottom = 0.0799561
-theme_override_font_sizes/font_size = 50
-text = "Bye"
+[node name="Outside" type="Sprite2D" parent="."]
+position = Vector2(921, 702)
+texture = ExtResource("2_no7e2")
 
 [node name="InputController" parent="." instance=ExtResource("2_owcbj")]
 shouldEscQuit = true
 
-[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -621.0
+offset_top = -347.5
+offset_right = 621.0
+offset_bottom = 347.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+theme_override_font_sizes/font_size = 150
+text = "Long Laugh the King"
+vertical_alignment = 1
+
+[node name="StartGameButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_340ey")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartGameButton"]
+offset_left = 664.5
+offset_top = -2.5
+offset_right = 965.5
+offset_bottom = 202.5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+theme_override_font_sizes/font_size = 50
+text = "Play"
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_dim5n")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Button"]
+offset_left = 673.5
+offset_top = -3.5
+offset_right = 974.5
+offset_bottom = 201.5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.28
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+vertical_alignment = 1
+
+[node name="IconsJokes" type="Sprite2D" parent="."]
+position = Vector2(1701.51, 212.949)
+rotation = 0.48567
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 8
+
+[node name="IconsJokes2" type="Sprite2D" parent="."]
+position = Vector2(180.512, 214.949)
+rotation = -0.36846
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 8
+
+[node name="IconsJokes3" type="Sprite2D" parent="."]
+position = Vector2(957, 149)
+rotation = 0.0504194
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 7
+
+[node name="SkyAssets" type="Sprite2D" parent="."]
+position = Vector2(131, 604)
+texture = ExtResource("5_f3x2v")
+hframes = 3
+vframes = 3
+
+[node name="SkyAssets2" type="Sprite2D" parent="."]
+position = Vector2(1884, 26)
+texture = ExtResource("5_f3x2v")
+hframes = 3
+vframes = 3
+frame = 6
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

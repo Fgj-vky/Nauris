@@ -35,7 +35,23 @@ func createCard(resource:CardResource):
 		(card as Card).SetCardInfo(resource)
 
 func createRandomCard():
+	if(!cards.any(func(c): return c.resource.cardType == CardResource.CardType.Subject)):
+		createCard(cardResources
+			.filter(func(c): return c.cardType == CardResource.CardType.Subject)
+			.pick_random())
+		return
+	if(!cards.any(func(c): return c.resource.cardType == CardResource.CardType.Theme)):
+		createCard(cardResources
+			.filter(func(c): return c.cardType == CardResource.CardType.Theme)
+			.pick_random())
+		return
+	if(!cards.any(func(c): return c.resource.cardType == CardResource.CardType.PunchLine)):
+		createCard(cardResources
+			.filter(func(c): return c.cardType == CardResource.CardType.PunchLine)
+			.pick_random())
+		return
 	createCard(cardResources.pick_random())
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

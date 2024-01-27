@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var cardHolder = $Cards
+@export var king: King
 
 var slot1: Card
 var slot2: Card
@@ -9,6 +10,9 @@ var slot3: Card
 @onready var slotPos1 = $MarginContainer/TextureRect/slotPos1
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
+
+var cardDict = {}
+var cardData = preload("res://assets/Book2.csv").records
 
 func addCardToTable(card: Card): 
 	# Add card to next slot if free
@@ -41,7 +45,14 @@ func checkForSpace():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	formDict()
+	
+func formDict():
+	for data in cardData:
+		if(cardDict.has(data[0])):
+			cardDict[data[0]].append(data[1])
+		else:
+			cardDict[data[0]] = [data[1]]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,8 +61,9 @@ func _process(delta):
 
 func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
-		#return
-		pass
+		king.react(-0.1)
+	else:
+		king.react(calculateMoodScore())
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()
@@ -61,6 +73,22 @@ func removeCards():
 	hand.createRandomCard()
 	hand.createRandomCard()
 	hand.createRandomCard()
+
+func calculateMoodScore():
+	
+	var cards = [slot1, slot2, slot3]
+	var bonus = 0
+	for card in cards:
+		var resource = (card as Card).resource
+		if(!cardDict.has(resource.cardName)): continue
+		var combitables = cardDict[resource.cardName]
+		for com in combitables:
+			for testCard in cards:
+				if((testCard as Card).resource.cardName == com):
+					bonus += 1
+					print("Found combatible cards: " + resource.cardName + " + " + com)
+	#print("bonus: " + bonus/10.0)
+	return bonus / 10.0
 
 func playCards():
 	slot1.cardPlayed()

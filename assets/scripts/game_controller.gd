@@ -6,7 +6,7 @@ var levelActive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	king.loseCallback = lose	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,3 +18,13 @@ func _process(delta):
 
 func endLevel():
 	levelActive = false
+	if king.moodMeter > 0.25:
+		win()
+	else:
+		lose()
+
+func win():
+	print("You win")
+	
+func lose():
+	print("You lose")

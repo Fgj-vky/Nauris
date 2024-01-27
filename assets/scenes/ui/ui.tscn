@@ -1,58 +1,35 @@
 [gd_scene load_steps=3 format=3 uid="uid://k2vwkfocdy64"]
 
 [ext_resource type="Script" path="res://assets/scenes/ui/ui.gd" id="1_xl6mr"]
-[ext_resource type="PackedScene" uid="uid://dtr13loi2crgk" path="res://assets/scenes/card_system/card_slot.tscn" id="1_xwr8n"]
+[ext_resource type="Texture2D" uid="uid://dh617frhlv13n" path="res://assets/sprites/card_table.png" id="3_e8p2g"]
 
 [node name="Ui" type="CanvasLayer"]
 follow_viewport_enabled = true
 script = ExtResource("1_xl6mr")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.581
-anchor_top = 0.256
-anchor_right = 0.885
-anchor_bottom = 0.744
-offset_left = 0.47998
-offset_top = 0.519989
-offset_right = 0.799927
-offset_bottom = -0.52002
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 197.0
-offset_top = 170.5
-offset_right = -197.0
-offset_bottom = -170.5
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -750.0
+offset_right = 750.0
+offset_bottom = 730.0
 grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(750, 0)
 
-[node name="CardSlot" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
+texture = ExtResource("3_e8p2g")
+expand_mode = 2
 
-[node name="slotPos1" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot"]
-position = Vector2(35, 50)
+[node name="slotPos1" type="Node2D" parent="MarginContainer/TextureRect"]
+position = Vector2(332, 302)
 
-[node name="CardSlot2" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
-layout_mode = 2
+[node name="slotPos2" type="Node2D" parent="MarginContainer/TextureRect"]
+position = Vector2(756, 314)
 
-[node name="slotPos2" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot2"]
-position = Vector2(35, 50)
+[node name="slotPos3" type="Node2D" parent="MarginContainer/TextureRect"]
+position = Vector2(1166, 300)
 
-[node name="CardSlot3" parent="MarginContainer/Panel/HBoxContainer" instance=ExtResource("1_xwr8n")]
-layout_mode = 2
-
-[node name="slotPos3" type="Node2D" parent="MarginContainer/Panel/HBoxContainer/CardSlot3"]
-position = Vector2(35, 50)
-
-[node name="Cards" type="Node2D" parent="MarginContainer/Panel/HBoxContainer"]
-position = Vector2(-1313, -447.5)
+[node name="Cards" type="Node2D" parent="."]

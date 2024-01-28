@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ckwq84twxc21p" path="res://assets/resources/environment/2d_sky_gradient_2d.tres" id="3_0h7yx"]
 
 [node name="Sky" type="Node2D"]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
 script = ExtResource("1_cstfm")
 skyTopDay = Color(0.188235, 0.643137, 0.843137, 1)
 skyBottomDay = Color(0.870588, 0.952941, 1, 1)
-skyTopNight = Color(0.188235, 0.643137, 0.843137, 1)
-skyBottomNight = Color(0.592157, 0.14902, 0.2, 1)
 
 [node name="SunPivot" type="Node2D" parent="."]
 position = Vector2(966, 1314)

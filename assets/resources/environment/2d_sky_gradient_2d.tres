@@ -4,6 +4,5 @@
 
 [resource]
 gradient = ExtResource("1_c4uxk")
-use_hdr = true
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)

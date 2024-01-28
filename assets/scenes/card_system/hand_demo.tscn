@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://saim2x6odc35"]
+[gd_scene load_steps=14 format=3 uid="uid://saim2x6odc35"]
 
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="1_4hbwc"]
 [ext_resource type="Texture2D" uid="uid://dvllgx6xau4hg" path="res://assets/sprites/mountains.png" id="1_k6j5f"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="6_wn3x4"]
 [ext_resource type="PackedScene" uid="uid://b1babsxkmlsbg" path="res://assets/scenes/jester/jester.tscn" id="8_8doun"]
 [ext_resource type="AudioStream" uid="uid://dyogcd78hcbn3" path="res://assets/Audio/Gameplay theme WIP.mp3" id="10_gsdlv"]
+[ext_resource type="PackedScene" uid="uid://cdua45pj8mok4" path="res://assets/scenes/event_system/event_system.tscn" id="11_trgli"]
 
 [sub_resource type="Curve" id="Curve_b7nxx"]
 _data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
@@ -103,3 +104,11 @@ stream = ExtResource("10_gsdlv")
 volume_db = -10.0
 autoplay = true
 attenuation = 1e-05
+
+[node name="EventSystem" parent="." instance=ExtResource("11_trgli")]
+position = Vector2(279, 770)
+resourcePath = "res://assets/resources/events"
+maxTime = 5.0
+minTime = 2.0
+timeEventActive = 15.0
+tweenOutAmount = 500.0

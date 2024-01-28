@@ -6,6 +6,7 @@ class_name Ui
 
 @onready var gameController = $"../GameController"
 @onready var jester: Jester = $"../Jester" as Jester
+@onready var events: eventSystem = $"../EventSystem" as eventSystem
 
 var slot1: Card
 var slot2: Card
@@ -97,8 +98,21 @@ func calculateMoodScore():
 				if((testCard as Card).resource.cardName == com):
 					bonus += 1
 					print("Found combatible cards: " + resource.cardName + " + " + com)
-	#print("bonus: " + bonus/10.0)
 	
+	if(!events.eventActive):
+		return bonus / 10.0
+	
+	var event = events.currentEvent
+	for card in cards:
+		var resource = card.resource
+		if(event.compatibleCards.any(func(card): return card.cardName == resource.cardName)):
+			bonus += 1
+			print("event compatibility found: " + resource.cardName + " : " + event.name)
+		if(event.inCompatibleCards.any(func(card): return card.cardName == resource.cardName)):
+			bonus -= 1
+			print("event in compatibility found: " + resource.cardName + " : " + event.name)
+	
+	event.compatibleCards
 	
 	return bonus / 10.0
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b1babsxkmlsbg"]
 
 [ext_resource type="Script" path="res://assets/scenes/jester/jester.gd" id="1_5dcdo"]
-[ext_resource type="Texture2D" uid="uid://d26p5i1dcybig" path="res://assets/sprites/jester.png" id="1_fwkcm"]
+[ext_resource type="Texture2D" uid="uid://f3fax5ct8lgw" path="res://assets/sprites/jester.png" id="1_fwkcm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t88fk"]
 atlas = ExtResource("1_fwkcm")
@@ -112,6 +112,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qolor"]
 _data = {
@@ -122,7 +134,6 @@ _data = {
 script = ExtResource("1_5dcdo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = 0.0501967
 scale = Vector2(0.5, 0.5)
 skew = -0.0849014
 sprite_frames = SubResource("SpriteFrames_f64k6")

@@ -91,8 +91,7 @@ offset_bottom = -53.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
-text = "Help
-"
+text = "Help"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -142,8 +141,7 @@ setTime = 1.0
 [node name="Exit Button" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Exit
-"
+text = "Exit"
 
 [node name="SkyAssets" type="Sprite2D" parent="."]
 position = Vector2(131, 604)
@@ -194,9 +192,7 @@ There are 3 kinds of cards:
 - Red: Theme
 - Blue: Subject
 - Green: Punch Line
-Combine the cards in this order or you'll fumble your words. Only some cards work with each other and it's up to you to figure out
-
-"
+Combine the cards in this order or you'll fumble your words. Only some cards work with each other and it's up to you to figure out"
 
 [node name="Button" type="Button" parent="HelpPanel/VBoxContainer"]
 layout_mode = 2
@@ -213,8 +209,7 @@ offset_top = -276.0
 offset_right = 435.0
 offset_bottom = -36.0
 grow_vertical = 0
-text = "Credits
-"
+text = "Credits"
 
 [node name="CreditPanel" type="Panel" parent="."]
 visible = false
@@ -248,9 +243,7 @@ Atte Saari - Programming, \"RTX\" mode
 Jaakkko Sukuvaara - Programming
 Lauri Lyytikäinen - Programming
 Leo Äijälä - Art
-Saarni Holva - Music, audio
-
-"
+Saarni Holva - Music, audio"
 scroll_active = false
 autowrap_mode = 2
 

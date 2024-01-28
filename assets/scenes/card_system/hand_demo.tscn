@@ -64,8 +64,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7um1p")
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
-position = Vector2(968, 982)
-fanLimit = 500.0
+z_index = 5
+position = Vector2(968, 1014.15)
+fanLimit = 350.0
 fanLimitCardTarget = 20
 maxCards = 20
 minCards = 5
@@ -73,7 +74,7 @@ cardDecay = 0.5
 heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")
 rotationLimit = 15.0
-fanHeight = 100.0
+fanHeight = 50.0
 resourcePath = "res://assets/resources/cards"
 
 [node name="InputController" parent="." instance=ExtResource("2_7eall")]
@@ -106,9 +107,9 @@ autoplay = true
 attenuation = 1e-05
 
 [node name="EventSystem" parent="." instance=ExtResource("11_trgli")]
-position = Vector2(279, 770)
+position = Vector2(1011, 821)
 resourcePath = "res://assets/resources/events"
 maxTime = 5.0
 minTime = 2.0
-timeEventActive = 15.0
-tweenOutAmount = 500.0
+timeEventActive = 5.0
+tweenOutAmount = 1500.0

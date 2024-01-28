@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://saim2x6odc35"]
+[gd_scene load_steps=15 format=3 uid="uid://saim2x6odc35"]
 
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="1_4hbwc"]
 [ext_resource type="Texture2D" uid="uid://dvllgx6xau4hg" path="res://assets/sprites/mountains.png" id="1_k6j5f"]
-[ext_resource type="PackedScene" uid="uid://cvtt8ok3usfly" path="res://assets/scenes/game/2d_sky.tscn" id="1_qfsmx"]
+[ext_resource type="PackedScene" path="res://assets/scenes/game/2d_sky.tscn" id="1_qfsmx"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_7eall"]
 [ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_7um1p"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="3_ef0dx"]

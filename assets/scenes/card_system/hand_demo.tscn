@@ -29,7 +29,6 @@ layer = -1
 follow_viewport_enabled = true
 
 [node name="2DSky" parent="Background" instance=ExtResource("1_qfsmx")]
-visible = false
 
 [node name="TextureRect2" type="TextureRect" parent="Background"]
 z_index = -5

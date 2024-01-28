@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dky2sn87o4m1l"]
+[gd_scene load_steps=4 format=3 uid="uid://cvtt8ok3usfly"]
 
 [ext_resource type="Script" path="res://assets/scripts/2d_sky_controller.gd" id="1_cstfm"]
 [ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="1_ogfte"]
@@ -11,6 +11,7 @@ process_thread_messages = 0
 script = ExtResource("1_cstfm")
 skyTopDay = Color(0.188235, 0.643137, 0.843137, 1)
 skyBottomDay = Color(0.870588, 0.952941, 1, 1)
+skyFlatColor = Color(0, 0.752941, 0.992157, 1)
 
 [node name="SunPivot" type="Node2D" parent="."]
 position = Vector2(966, 1314)

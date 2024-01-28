@@ -11,6 +11,7 @@ var totalRot
 
 @export_color_no_alpha var skyTopDay: Color
 @export_color_no_alpha var skyBottomDay: Color
+@export_color_no_alpha var skyFlatColor: Color
 
 var skyGradient: Gradient
 
@@ -26,5 +27,5 @@ func _ready():
 	sunPivot.rotation_degrees = sunRotStart
 
 	skyGradient = sky.texture.gradient
-	skyGradient.set_color(0, skyTopDay)
-	skyGradient.set_color(1, skyTopDay)
+	skyGradient.set_color(0, skyFlatColor)
+	skyGradient.set_color(1, skyFlatColor)

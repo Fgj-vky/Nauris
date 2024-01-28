@@ -64,9 +64,11 @@ texture = ExtResource("2_7um1p")
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
 position = Vector2(968, 982)
-startingCardCount = 5
-fanLimit = 200.0
-fanLimitCardTarget = 5
+fanLimit = 500.0
+fanLimitCardTarget = 20
+maxCards = 20
+minCards = 5
+cardDecay = 0.5
 heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")
 rotationLimit = 15.0
@@ -79,10 +81,12 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("3_ef0dx")]
 king = NodePath("../King")
 
-[node name="King" parent="." instance=ExtResource("5_gfc1e")]
+[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("5_gfc1e")]
 position = Vector2(1613, 534)
-moodDecayRateInSeconds = 10.0
+jester = NodePath("../Jester")
+maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
+moodDecayDecay = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("6_wn3x4")]
 king = NodePath("../King")

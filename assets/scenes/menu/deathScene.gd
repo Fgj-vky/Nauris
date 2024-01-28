@@ -2,10 +2,12 @@ extends CanvasLayer
 
 
 @onready var global = $"/root/Global" as Globals
+ 
+@onready var label = $MarginContainer/Panel/VBoxContainer/ScoreLabel as Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	label.text += str(global.currentScore)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

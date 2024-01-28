@@ -2,7 +2,9 @@ extends Node2D
 
 @export var king: King
 var time = 120.0 # time in seconds left 
+@onready var startTime = time
 var levelActive = true
+var dayProgress = 0
 
 var score:int
 @export var scoreMultiplier:int
@@ -27,6 +29,7 @@ func _ready():
 func _process(delta):
 	if time > 0:
 		time -= delta
+		dayProgress = (startTime - time) / startTime
 	elif levelActive:
 		endLevel()
 

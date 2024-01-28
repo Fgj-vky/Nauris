@@ -94,9 +94,11 @@ environment = ExtResource("4_fb1sl")
 
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
 position = Vector2(968, 982)
-startingCardCount = 5
-fanLimit = 200.0
-fanLimitCardTarget = 5
+fanLimit = 500.0
+fanLimitCardTarget = 20
+maxCards = 20
+minCards = 5
+cardDecay = 0.5
 heightCurve = SubResource("Curve_hoaqa")
 rotationCurve = SubResource("Curve_g8xfq")
 rotationLimit = 15.0
@@ -112,7 +114,7 @@ king = NodePath("../King")
 [node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
 jester = NodePath("../Jester")
-moodDecayRateInSeconds = 10.0
+maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("9_l4j53")]

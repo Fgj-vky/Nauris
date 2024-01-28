@@ -51,6 +51,23 @@ theme_override_font_sizes/font_size = 150
 text = "Long Laugh the King"
 vertical_alignment = 1
 
+[node name="Help Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -293.0
+offset_right = -63.0
+offset_bottom = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Help
+"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -61,7 +78,7 @@ anchor_bottom = 0.5
 offset_left = -420.0
 offset_top = -157.0
 offset_right = 351.0
-offset_bottom = 573.0
+offset_bottom = 462.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -76,14 +93,23 @@ alignment = 1
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
 [node name="StartRTXButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Start with RTX"
+
+[node name="RtxOn" type="Sprite2D" parent="MarginContainer/Panel/VBoxContainer/StartRTXButton"]
+position = Vector2(626, 76)
+rotation = 0.179856
+scale = Vector2(0.378825, 0.378825)
+texture = ExtResource("7_4rs7t")
 
 [node name="Exit Button" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Exit
 "
 
@@ -118,12 +144,51 @@ hframes = 3
 vframes = 3
 frame = 6
 
-[node name="RtxOn" type="Sprite2D" parent="."]
-position = Vector2(1193, 717)
-rotation = 0.179856
-scale = Vector2(0.378825, 0.378825)
-texture = ExtResource("7_4rs7t")
+[node name="HelpPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -794.0
+offset_top = -415.0
+offset_right = 794.0
+offset_bottom = 415.0
+grow_horizontal = 2
+grow_vertical = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "Your job as the castles jester is to entertain the king. The kings mood drops throughout the day and can be seen from his noses height and his responses.
+Play cards to construct jokes and include possible event characters to gain bonus funniness.
+
+There are 3 kinds of cards:
+- Red: Theme
+- Blue: Subject
+- Green: Punch Line
+Combine the cards in this order or you'll fumble your words. Only some cards work with each other and it's up to you to figure out
+
+"
+
+[node name="Button" type="Button" parent="HelpPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ok take me back"
+
+[connection signal="pressed" from="Help Button" to="." method="showHelp"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartRTXButton" to="." method="_on_start_rtx_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HelpPanel/VBoxContainer/Button" to="." method="closeHelp"]

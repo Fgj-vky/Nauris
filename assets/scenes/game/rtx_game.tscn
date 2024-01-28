@@ -131,11 +131,11 @@ nexDayScene = "res://assets/scenes/menu/dayCompleteScene.tscn"
 position = Vector2(1276, 793)
 
 [node name="EventSystem" parent="." instance=ExtResource("14_aj5hg")]
-position = Vector2(1011, 821)
+position = Vector2(1012, 919)
 resourcePath = "res://assets/resources/events"
 maxTime = 5.0
 minTime = 2.0
-timeEventActive = 5.0
+timeEventActive = 10.0
 tweenOutAmount = 1500.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

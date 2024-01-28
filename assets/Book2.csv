@@ -7,6 +7,9 @@ Comedy,Princess
 Comedy,Queen
 Crass,Guest
 Crass,Jester
+Crass,Blue Army
+Crass,Green Army
+Crass,Yellow Army
 Dark,Blue Army
 Dark,Green Army
 Dark,Yellow Army
@@ -43,11 +46,9 @@ Bad,Peasants
 Bonfire,Religion
 Bonfire,Jester
 Bonfire,Peasants
-Bonfire,Chef
 Good,King
 Good,Princess
 Good,Queen
-Good,Chef
 Good,Religion
 No Maids,Jester
 No Maids,Blue Army
@@ -60,7 +61,6 @@ No Maids,Yellow Kingdom
 Poor,Jester
 Poor,Chef
 Poor,Peasants
-Poor,Blue Kingdom
 Poor,Green Kingdom
 Poor,Yellow Kingdom
 Short,Chef
@@ -76,3 +76,4 @@ Smells ,Green Army
 Smells ,Yellow Army
 Dumb,Jester
 Dumb,Peasants
+Dumb,Religion

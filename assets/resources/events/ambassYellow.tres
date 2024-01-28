@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="event" load_steps=8 format=3 uid="uid://q7b53by55t3t"]
+
+[ext_resource type="Texture2D" uid="uid://cslb6prm7ibng" path="res://assets/sprites/event_characters/ambass_yellow.png" id="1_qhhkt"]
+[ext_resource type="Resource" uid="uid://d30sr5mml6573" path="res://assets/resources/cards/subject/subject_peasants.tres" id="2_vuy3w"]
+[ext_resource type="Resource" uid="uid://bmxoy7tn1842q" path="res://assets/resources/cards/subject/subject_princess.tres" id="3_vmqky"]
+[ext_resource type="Resource" uid="uid://c8727hwm68top" path="res://assets/resources/cards/subject/subject_yellowArmy.tres" id="4_5164d"]
+[ext_resource type="Resource" uid="uid://bpsmlcn5wvkfj" path="res://assets/resources/cards/themes/theme_political.tres" id="4_nw0cn"]
+[ext_resource type="Resource" uid="uid://cjc60axfok5m3" path="res://assets/resources/cards/subject/subject_yellowKingdom.tres" id="5_j8wsh"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="6_bnbgd"]
+
+[resource]
+script = ExtResource("6_bnbgd")
+name = "Green Ambassador"
+character = ExtResource("1_qhhkt")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("2_vuy3w"), ExtResource("3_vmqky"), ExtResource("4_nw0cn")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("4_5164d"), ExtResource("5_j8wsh")])

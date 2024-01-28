@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="event" load_steps=9 format=3 uid="uid://q5d46cosayjg"]
+
+[ext_resource type="Resource" uid="uid://cw85hbieefk01" path="res://assets/resources/cards/subject/subject_chef.tres" id="1_0h0e3"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="1_6e3re"]
+[ext_resource type="Texture2D" uid="uid://c4wi7vpi0yblq" path="res://assets/sprites/event_characters/chef.png" id="1_st02u"]
+[ext_resource type="Resource" uid="uid://cdbqreqy8bay7" path="res://assets/resources/cards/punch_lines/punch_poor.tres" id="2_uhvfc"]
+[ext_resource type="Resource" uid="uid://cfw6jdu5q7qcq" path="res://assets/resources/cards/themes/theme_food.tres" id="3_uv1ts"]
+[ext_resource type="Resource" uid="uid://bn3tlo5hwl0dd" path="res://assets/resources/cards/punch_lines/punch_short.tres" id="4_pfpv5"]
+[ext_resource type="Resource" uid="uid://8qfkepmykbe1" path="res://assets/resources/cards/themes/theme_wholesome.tres" id="5_e6n73"]
+[ext_resource type="Resource" uid="uid://fs0gw020broe" path="res://assets/resources/cards/punch_lines/punch_good.tres" id="6_ddfh8"]
+
+[resource]
+script = ExtResource("1_6e3re")
+name = "Chef"
+character = ExtResource("1_st02u")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("1_0h0e3"), ExtResource("2_uhvfc"), ExtResource("3_uv1ts"), ExtResource("4_pfpv5")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("5_e6n73"), ExtResource("6_ddfh8")])

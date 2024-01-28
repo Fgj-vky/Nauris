@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="event" load_steps=7 format=3 uid="uid://nicb6wl46wdx"]
 
-[ext_resource type="Texture2D" uid="uid://cfr8to1oxgqcn" path="res://assets/sprites/amogus.png" id="1_m2reb"]
+[ext_resource type="Texture2D" uid="uid://blbo031do0fwi" path="res://assets/sprites/event_characters/sus.png" id="1_i1li3"]
 [ext_resource type="Script" path="res://assets/scripts/event.gd" id="1_rgp2y"]
-[ext_resource type="Resource" path="res://assets/resources/cards/themes/theme_comedy.tres" id="2_ad7k6"]
+[ext_resource type="Resource" uid="uid://b7juiy67jde3b" path="res://assets/resources/cards/themes/theme_comedy.tres" id="2_ad7k6"]
 [ext_resource type="Resource" uid="uid://btgw21vrw84h4" path="res://assets/resources/cards/themes/theme_satire.tres" id="3_6245m"]
-[ext_resource type="Resource" path="res://assets/resources/cards/punch_lines/punch_stupid.tres" id="4_2hvyh"]
+[ext_resource type="Resource" uid="uid://q5ch53irwvri" path="res://assets/resources/cards/punch_lines/punch_stupid.tres" id="4_2hvyh"]
 [ext_resource type="Resource" uid="uid://bpsmlcn5wvkfj" path="res://assets/resources/cards/themes/theme_political.tres" id="5_fo6yl"]
 
 [resource]
 script = ExtResource("1_rgp2y")
 name = "sussimus maximus"
-character = ExtResource("1_m2reb")
+character = ExtResource("1_i1li3")
 compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("2_ad7k6"), ExtResource("3_6245m"), ExtResource("4_2hvyh")])
 inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("5_fo6yl")])

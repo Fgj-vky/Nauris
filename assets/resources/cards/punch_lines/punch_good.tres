@@ -9,3 +9,4 @@ cardName = "Good"
 combatibleCards = Array[ExtResource("1_xv5on")]([null])
 incombatibleCards = Array[ExtResource("1_xv5on")]([])
 imageIndex = 21
+logTextVariation = "about being good"

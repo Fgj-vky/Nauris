@@ -9,3 +9,4 @@ cardName = "No Maids"
 combatibleCards = Array[ExtResource("1_p4xni")]([])
 incombatibleCards = Array[ExtResource("1_p4xni")]([])
 imageIndex = 26
+logTextVariation = "having no maids"

@@ -9,3 +9,4 @@ cardName = "Dumb"
 combatibleCards = Array[ExtResource("1_d8vfg")]([null])
 incombatibleCards = Array[ExtResource("1_d8vfg")]([])
 imageIndex = 27
+logTextVariation = "being stupid"

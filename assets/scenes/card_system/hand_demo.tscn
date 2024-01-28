@@ -81,10 +81,11 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("3_ef0dx")]
 king = NodePath("../King")
 
-[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("5_gfc1e")]
+[node name="King" parent="." node_paths=PackedStringArray("jester", "ui") instance=ExtResource("5_gfc1e")]
 position = Vector2(1613, 534)
 jester = NodePath("../Jester")
-moodDecayRateInSeconds = 10.0
+ui = NodePath("../Ui")
+maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 moodDecayDecay = 0.1
 

@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name Ui
 
 @onready var cardHolder = $Cards
 @export var king: King
@@ -67,10 +68,12 @@ func _process(delta):
 func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
 		king.react(-0.1)
+		logPanel.log(slot1, slot2, slot3, false)
 	else:
 		var score = calculateMoodScore()
 		king.react(score)
 		gameController.addScore(score)
+		logPanel.log(slot1, slot2, slot3, true)
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()
@@ -95,13 +98,13 @@ func calculateMoodScore():
 					bonus += 1
 					print("Found combatible cards: " + resource.cardName + " + " + com)
 	#print("bonus: " + bonus/10.0)
+	
+	
 	return bonus / 10.0
 
 func playCards():
 	
 	jester.speak()
-	
-	logPanel.log(slot1, slot2, slot3)
 	
 	
 	slot1.cardPlayed()
@@ -109,3 +112,6 @@ func playCards():
 	slot3.cardPlayed()
 	await get_tree().create_timer(1).timeout
 	removeCards()
+
+func getLog():
+	return logPanel

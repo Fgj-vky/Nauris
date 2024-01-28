@@ -8,3 +8,5 @@ cardType = 0
 cardName = "Wholesome"
 combatibleCards = Array[ExtResource("1_xdihw")]([])
 incombatibleCards = Array[ExtResource("1_xdihw")]([])
+imageIndex = 0
+logTextVariation = ""

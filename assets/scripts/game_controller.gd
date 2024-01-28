@@ -46,8 +46,10 @@ func addScore(amout:float):
 
 func win():
 	print("You win")
+	global.currentScore = score
 	get_tree().change_scene_to_file(nexDayScene)
 	
 func lose():
 	print("You lose")
+	global.currentScore = score
 	get_tree().change_scene_to_file(loseScene)

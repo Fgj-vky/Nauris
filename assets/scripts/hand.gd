@@ -3,11 +3,16 @@ class_name Hand
 
 var cards: Array[Card] = []
 
+@onready var global = $"/root/Global" as Globals
 @onready var ui = $"../Ui"
 
-@export var startingCardCount: int
+var startingCardCount: int
 @export var fanLimit: float
 @export var fanLimitCardTarget: int
+
+@export var maxCards:int
+@export var minCards:int
+@export var cardDecay:float
 
 @export var heightCurve: Curve
 @export var rotationCurve: Curve
@@ -25,6 +30,7 @@ var cardScene: PackedScene = preload("res://assets/scenes/card_system/card.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	startingCardCount = max(maxCards * exp(-cardDecay * (global.currentDay - 1)), minCards)
 	dir_contents(resourcePath)
 	for i in range(startingCardCount):
 		createRandomCard()	

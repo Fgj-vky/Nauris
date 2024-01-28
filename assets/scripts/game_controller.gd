@@ -22,6 +22,7 @@ func _ready():
 	print("Current day: " + str(global.currentDay))
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if time > 0:

@@ -43,7 +43,8 @@ func _process(delta):
 
 func spawnEvent():
 	currentEvent = resources.pick_random()
-	sprite.texture = currentEvent.character
+	sprite.texture = currentEvent.character
+	sprite.flip_hflip_h = false
 	sprite.global_position = sprite.global_position + Vector2(-tweenOutAmount, 0)
 	var tween = get_tree().create_tween()
 	tween.tween_property($'./Sprite2D', "global_position", sprite.global_position + Vector2(tweenOutAmount, 0), 0.5)

@@ -103,7 +103,6 @@ attenuation = 1e-05
 [node name="EventSystem" parent="." instance=ExtResource("11_trgli")]
 position = Vector2(1011, 821)
 resourcePath = "res://assets/resources/events"
-resources = null
 maxTime = 5.0
 minTime = 2.0
 timeEventActive = 5.0

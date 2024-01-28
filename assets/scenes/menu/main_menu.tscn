@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_no7e2"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_owcbj"]
 [ext_resource type="Texture2D" uid="uid://bt00vujvfub6o" path="res://assets/sprites/icons_jokes.png" id="4_pqabs"]
-[ext_resource type="Texture2D" uid="uid://cukfc4rq7m4es" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
+[ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
 [ext_resource type="Texture2D" uid="uid://60xdaverdwqf" path="res://assets/sprites/rtxOn.png" id="7_4rs7t"]
 
 [node name="MainMenu" type="Control"]

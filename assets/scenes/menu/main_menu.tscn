@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6kd5v6i2kfl8"]
+[gd_scene load_steps=10 format=3 uid="uid://6kd5v6i2kfl8"]
 
 [ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_0v0ld"]
 [ext_resource type="Script" path="res://assets/scenes/menu/main_menu.gd" id="1_4y31s"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="5_f3x2v"]
 [ext_resource type="Texture2D" uid="uid://60xdaverdwqf" path="res://assets/sprites/rtxOn.png" id="7_4rs7t"]
 [ext_resource type="Script" path="res://assets/scripts/swing.gd" id="8_tg2xm"]
+[ext_resource type="AudioStream" uid="uid://ovyt117hdy51" path="res://assets/Audio/main_menu_theme_WIP.mp3" id="9_0resc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -121,13 +122,11 @@ alignment = 1
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
 [node name="StartRTXButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Start with RTX"
 
@@ -142,7 +141,6 @@ setTime = 1.0
 
 [node name="Exit Button" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Exit
 "
@@ -262,6 +260,10 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 theme_override_font_sizes/font_size = 30
 text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0resc")
+autoplay = true
 
 [connection signal="pressed" from="Help Button" to="." method="showHelp"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]

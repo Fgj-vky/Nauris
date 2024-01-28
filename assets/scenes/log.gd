@@ -42,7 +42,7 @@ func logKingReaction(funny: int, moodFrame: int):
 		if moodFrame == 6:
 			reaction += " can not contain his laugh"
 		elif moodFrame == 7:
-			reaction += " chuggles a little"
+			reaction += " chuckles a little"
 		elif moodFrame == 8:
 			reaction += " finds it a bit funny"
 		elif moodFrame == 9:

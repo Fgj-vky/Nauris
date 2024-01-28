@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/scenes/menu/deathScene.gd" id="1_lndql"]
 [ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_uy0tq"]
-[ext_resource type="AudioStream" uid="uid://be8rjcrlr5w72" path="res://assets/Audio/execution.mp3" id="3_wwkv5"]
+[ext_resource type="AudioStream" uid="uid://cvpb2ereb5yfj" path="res://assets/Audio/boo.mp3" id="3_7csri"]
 
 [node name="DeathScene" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -184,7 +184,7 @@ theme_override_font_sizes/font_size = 75
 text = "BOO"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wwkv5")
+stream = ExtResource("3_7csri")
 autoplay = true
 attenuation = 0.812252
 

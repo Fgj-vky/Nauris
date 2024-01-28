@@ -104,5 +104,5 @@ position = Vector2(1012, 919)
 resourcePath = "res://assets/resources/events"
 maxTime = 5.0
 minTime = 2.0
-timeEventActive = 5.0
+timeEventActive = 10.0
 tweenOutAmount = 1500.0

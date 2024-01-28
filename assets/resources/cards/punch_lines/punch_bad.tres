@@ -9,3 +9,4 @@ cardName = "Bad"
 combatibleCards = Array[ExtResource("1_b05yp")]([null])
 incombatibleCards = Array[ExtResource("1_b05yp")]([])
 imageIndex = 22
+logTextVariation = "being bad"

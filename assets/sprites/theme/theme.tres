@@ -77,3 +77,4 @@ Label/constants/outline_size = 37
 Label/fonts/font = ExtResource("1_7ejms")
 Panel/styles/panel = SubResource("StyleBoxTexture_efa7a")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_g5je7")
+RichTextLabel/fonts/normal_font = ExtResource("1_7ejms")

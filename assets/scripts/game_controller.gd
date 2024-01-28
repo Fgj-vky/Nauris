@@ -40,8 +40,9 @@ func endLevel():
 	else:
 		lose()
 
-func addScore(amout:float):
-	score = scoreMultiplier * amout
+func addScore(amount_:float):
+	var amount = max(amount_, 0)
+	score = scoreMultiplier * amount
 	print("Current score: " + str(score))
 
 func win():

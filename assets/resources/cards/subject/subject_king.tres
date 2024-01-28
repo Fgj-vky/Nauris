@@ -9,3 +9,4 @@ cardName = "King"
 combatibleCards = Array[ExtResource("1_trr3q")]([])
 incombatibleCards = Array[ExtResource("1_trr3q")]([])
 imageIndex = 7
+logTextVariation = ""

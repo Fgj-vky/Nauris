@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://dvllgx6xau4hg" path="res://assets/sprites/mountains.png" id="1_k6j5f"]
 [ext_resource type="PackedScene" uid="uid://cvtt8ok3usfly" path="res://assets/scenes/game/2d_sky.tscn" id="1_qfsmx"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="2_7eall"]
-[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/outside.png" id="2_7um1p"]
+[ext_resource type="Texture2D" uid="uid://c5xa53o8bi7rt" path="res://assets/sprites/Outside.png" id="2_7um1p"]
 [ext_resource type="PackedScene" uid="uid://k2vwkfocdy64" path="res://assets/scenes/ui/ui.tscn" id="3_ef0dx"]
 [ext_resource type="Texture2D" uid="uid://gevac17ucoth" path="res://assets/sprites/throne_room.png" id="4_uir2q"]
 [ext_resource type="PackedScene" uid="uid://d0brkk1ms726f" path="res://assets/scenes/king/king.tscn" id="5_gfc1e"]
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="6_wn3x4"]
 [ext_resource type="PackedScene" uid="uid://b1babsxkmlsbg" path="res://assets/scenes/jester/jester.tscn" id="8_8doun"]
 [ext_resource type="AudioStream" uid="uid://dyogcd78hcbn3" path="res://assets/Audio/Gameplay theme WIP.mp3" id="10_gsdlv"]
+[ext_resource type="PackedScene" uid="uid://cdua45pj8mok4" path="res://assets/scenes/event_system/event_system.tscn" id="11_trgli"]
 
 [sub_resource type="Curve" id="Curve_b7nxx"]
 _data = [Vector2(0, 0), 0.0, 1.03685, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0, 0.0, 0, 0]
@@ -56,8 +57,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7um1p")
 
 [node name="Hand" parent="." instance=ExtResource("1_4hbwc")]
-position = Vector2(968, 982)
-fanLimit = 500.0
+z_index = 5
+position = Vector2(968, 1014.15)
+fanLimit = 350.0
 fanLimitCardTarget = 20
 maxCards = 20
 minCards = 5
@@ -65,7 +67,7 @@ cardDecay = 0.5
 heightCurve = SubResource("Curve_b7nxx")
 rotationCurve = SubResource("Curve_o6ur5")
 rotationLimit = 15.0
-fanHeight = 100.0
+fanHeight = 50.0
 resourcePath = "res://assets/resources/cards"
 
 [node name="InputController" parent="." instance=ExtResource("2_7eall")]
@@ -74,9 +76,10 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("3_ef0dx")]
 king = NodePath("../King")
 
-[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("5_gfc1e")]
+[node name="King" parent="." node_paths=PackedStringArray("jester", "ui") instance=ExtResource("5_gfc1e")]
 position = Vector2(1613, 534)
 jester = NodePath("../Jester")
+ui = NodePath("../Ui")
 maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 moodDecayDecay = 0.1
@@ -95,3 +98,11 @@ stream = ExtResource("10_gsdlv")
 volume_db = -10.0
 autoplay = true
 attenuation = 1e-05
+
+[node name="EventSystem" parent="." instance=ExtResource("11_trgli")]
+position = Vector2(1011, 821)
+resourcePath = "res://assets/resources/events"
+maxTime = 5.0
+minTime = 2.0
+timeEventActive = 5.0
+tweenOutAmount = 1500.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bc20xx0au3tl6"]
+[gd_scene load_steps=19 format=3 uid="uid://bc20xx0au3tl6"]
 
 [ext_resource type="PackedScene" uid="uid://nm2yjmj5pun1" path="res://assets/models/background.glb" id="1_058ms"]
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://be7yqqwjjsl6b" path="res://assets/scenes/game_controller/game_controller.tscn" id="9_l4j53"]
 [ext_resource type="PackedScene" uid="uid://ca8btvwtkcmlj" path="res://assets/models/scene_assets/torch_1.tscn" id="10_bkx6e"]
 [ext_resource type="PackedScene" uid="uid://b1babsxkmlsbg" path="res://assets/scenes/jester/jester.tscn" id="12_5qdt7"]
+[ext_resource type="PackedScene" uid="uid://cdua45pj8mok4" path="res://assets/scenes/event_system/event_system.tscn" id="14_aj5hg"]
+[ext_resource type="AudioStream" uid="uid://dyogcd78hcbn3" path="res://assets/Audio/Gameplay theme WIP.mp3" id="15_n0xpw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0r35l"]
 load_path = "res://.godot/imported/free_coconut_png.png.jpeg-48f82ffb9ef7ee5620b6ac7cc5cf6198.s3tc.ctex"
@@ -93,7 +95,8 @@ environment = ExtResource("4_fb1sl")
 [node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
 
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
-position = Vector2(968, 982)
+z_index = 5
+position = Vector2(968, 1014.15)
 fanLimit = 500.0
 fanLimitCardTarget = 20
 maxCards = 20
@@ -111,9 +114,10 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
 king = NodePath("../King")
 
-[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
+[node name="King" parent="." node_paths=PackedStringArray("jester", "ui") instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
 jester = NodePath("../Jester")
+ui = NodePath("../Ui")
 maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 
@@ -125,3 +129,16 @@ nexDayScene = "res://assets/scenes/menu/dayCompleteScene.tscn"
 
 [node name="Jester" parent="." instance=ExtResource("12_5qdt7")]
 position = Vector2(1276, 793)
+
+[node name="EventSystem" parent="." instance=ExtResource("14_aj5hg")]
+position = Vector2(1011, 821)
+resourcePath = "res://assets/resources/events"
+maxTime = 5.0
+minTime = 2.0
+timeEventActive = 5.0
+tweenOutAmount = 1500.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_n0xpw")
+volume_db = -10.0
+autoplay = true

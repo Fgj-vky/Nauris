@@ -9,3 +9,4 @@ cardName = "Bonfire"
 combatibleCards = Array[ExtResource("1_jx717")]([])
 incombatibleCards = Array[ExtResource("1_jx717")]([])
 imageIndex = 25
+logTextVariation = "being burned on a bonfire"

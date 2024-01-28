@@ -1,10 +1,12 @@
 extends CanvasLayer
+class_name Ui
 
 @onready var cardHolder = $Cards
 @export var king: King
 
 @onready var gameController = $"../GameController"
 @onready var jester: Jester = $"../Jester" as Jester
+@onready var events: eventSystem = $"../EventSystem" as eventSystem
 
 var slot1: Card
 var slot2: Card
@@ -13,6 +15,8 @@ var slot3: Card
 @onready var slotPos1 = $MarginContainer/TextureRect/slotPos1
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
+
+@onready var logPanel: Log = $Log
 
 var cardDict = {}
 var cardData = preload("res://assets/Book2.csv").records
@@ -65,10 +69,12 @@ func _process(delta):
 func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
 		king.react(-0.1)
+		logPanel.log(slot1, slot2, slot3, false)
 	else:
 		var score = calculateMoodScore()
 		king.react(score)
 		gameController.addScore(score)
+		logPanel.log(slot1, slot2, slot3, true)
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()
@@ -92,15 +98,37 @@ func calculateMoodScore():
 				if((testCard as Card).resource.cardName == com):
 					bonus += 1
 					print("Found combatible cards: " + resource.cardName + " + " + com)
-	#print("bonus: " + bonus/10.0)
+	
+	if bonus == 0:
+		bonus = -1
+	
+	if(!events.eventActive):
+		return bonus / 10.0
+	
+	var event = events.currentEvent
+	for card in cards:
+		var resource = card.resource
+		if(event.compatibleCards.any(func(card): return card.cardName == resource.cardName)):
+			bonus += 1
+			print("event compatibility found: " + resource.cardName + " : " + event.name)
+		if(event.inCompatibleCards.any(func(card): return card.cardName == resource.cardName)):
+			bonus -= 1
+			print("event in compatibility found: " + resource.cardName + " : " + event.name)
+	
+	event.compatibleCards
+	
 	return bonus / 10.0
 
 func playCards():
 	
 	jester.speak()
 	
+	
 	slot1.cardPlayed()
 	slot2.cardPlayed()
 	slot3.cardPlayed()
 	await get_tree().create_timer(1).timeout
 	removeCards()
+
+func getLog():
+	return logPanel

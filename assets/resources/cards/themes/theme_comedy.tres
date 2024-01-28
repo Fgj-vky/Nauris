@@ -9,3 +9,4 @@ cardName = "Comedy"
 combatibleCards = Array[ExtResource("1_cddnp")]([])
 incombatibleCards = Array[ExtResource("1_cddnp")]([])
 imageIndex = 3
+logTextVariation = "Comedic"

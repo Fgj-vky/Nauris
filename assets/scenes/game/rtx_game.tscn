@@ -32,7 +32,7 @@ point_count = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.406)
 
 [node name="Node3D" type="Node3D" parent="test"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260539, 0.0379935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260539, 0.405899)
 script = ExtResource("2_kxbei")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="test/Node3D"]
@@ -41,11 +41,17 @@ light_color = Color(1, 0.733333, 0.470588, 1)
 omni_range = 10.524
 omni_attenuation = 0.5
 
+[node name="Torch1" parent="test/Node3D/OmniLight3D" instance=ExtResource("10_bkx6e")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.05602, -0.386471, -0.44427)
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="test/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05576, 5.11796, 0.14916)
 light_color = Color(1, 0.733333, 0.470588, 1)
 omni_range = 10.524
 omni_attenuation = 0.5
+
+[node name="Torch2" parent="test/Node3D/OmniLight3D2" instance=ExtResource("6_pmla6")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.0184801, -0.441171, -0.537662)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="test/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66422, 5.11796, 0.14916)
@@ -53,49 +59,46 @@ light_color = Color(1, 0.733333, 0.470588, 1)
 omni_range = 10.524
 omni_attenuation = 0.5
 
+[node name="Torch4" parent="test/Node3D/OmniLight3D3" instance=ExtResource("10_bkx6e")]
+transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.0191197, -0.386471, -0.44427)
+
 [node name="OmniLight3D4" type="OmniLight3D" parent="test/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7479, 5.11796, 0.14916)
 light_color = Color(1, 0.733333, 0.470588, 1)
 omni_range = 10.524
 omni_attenuation = 0.5
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="test"]
-transform = Transform3D(0.424145, 0.285261, 0.859492, 0.755327, -0.635014, -0.161984, 0.499582, 0.717902, -0.484803, 4.98005, 4.66978, -5.86649)
+[node name="Torch3" parent="test/Node3D/OmniLight3D4" instance=ExtResource("6_pmla6")]
+transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.0429502, -0.441171, -0.537662)
+
+[node name="Sprite3D" type="Sprite3D" parent="test/Node3D/OmniLight3D4/Torch3"]
+transform = Transform3D(-1.42857, 0, 0, 0, 1.42857, 0, 0, 0, 1.42857, -225.881, -350.815, -248.039)
+billboard = 1
+double_sided = false
+texture = SubResource("CompressedTexture2D_0r35l")
+
+[node name="SunPivot" type="Node3D" parent="test"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98005, 4.66978, -5.86649)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="test/SunPivot"]
+transform = Transform3D(0.424145, 0.285261, 0.859492, 0.755327, -0.635014, -0.161983, 0.499582, 0.717902, -0.484803, 0, 0, 0)
 light_color = Color(1, 0.933333, 0.890196, 1)
 light_energy = 3.0
 shadow_enabled = true
 script = ExtResource("3_m7ivt")
-
-[node name="DayTimer" type="Timer" parent="test/DirectionalLight3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="test"]
 environment = ExtResource("4_fb1sl")
 
 [node name="cam" parent="test" instance=ExtResource("3_m6mkc")]
 
-[node name="Torch1" parent="test" instance=ExtResource("10_bkx6e")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.97637, 4.47095, 0.110789)
-
-[node name="Torch4" parent="test" instance=ExtResource("10_bkx6e")]
-transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 5.6451, 4.47095, 0.110789)
-
-[node name="Torch2" parent="test" instance=ExtResource("6_pmla6")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.07424, 4.41625, 0.0173973)
-
-[node name="Torch3" parent="test" instance=ExtResource("6_pmla6")]
-transform = Transform3D(-0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -5.79085, 4.41625, 0.0173973)
-
-[node name="Sprite3D" type="Sprite3D" parent="test/Torch3"]
-transform = Transform3D(-1.42857, 0, 0, 0, 1.42857, 0, 0, 0, 1.42857, -225.881, -350.815, -248.039)
-billboard = 1
-double_sided = false
-texture = SubResource("CompressedTexture2D_0r35l")
-
 [node name="Hand" parent="." instance=ExtResource("5_wjljr")]
 position = Vector2(968, 982)
-startingCardCount = 5
-fanLimit = 200.0
-fanLimitCardTarget = 5
+fanLimit = 500.0
+fanLimitCardTarget = 20
+maxCards = 20
+minCards = 5
+cardDecay = 0.5
 heightCurve = SubResource("Curve_hoaqa")
 rotationCurve = SubResource("Curve_g8xfq")
 rotationLimit = 15.0
@@ -108,9 +111,10 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
 king = NodePath("../King")
 
-[node name="King" parent="." instance=ExtResource("8_ei0tl")]
+[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
-moodDecayRateInSeconds = 10.0
+jester = NodePath("../Jester")
+maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 
 [node name="GameController" parent="." node_paths=PackedStringArray("king") instance=ExtResource("9_l4j53")]

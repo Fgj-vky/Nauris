@@ -3,7 +3,7 @@ class_name  Globals
 
 var currentDay:int
 var rtxOn: bool
-
+var currentScore:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

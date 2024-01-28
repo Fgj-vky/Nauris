@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="event" load_steps=10 format=3 uid="uid://d1bkyn4ro1lrk"]
+
+[ext_resource type="Resource" uid="uid://bmxoy7tn1842q" path="res://assets/resources/cards/subject/subject_princess.tres" id="1_1d84o"]
+[ext_resource type="Texture2D" uid="uid://bxe621m2xyshe" path="res://assets/sprites/event_characters/princess.png" id="1_cthau"]
+[ext_resource type="Resource" uid="uid://b3n8airm2kbh" path="res://assets/resources/cards/subject/subject_queen.tres" id="2_2no6p"]
+[ext_resource type="Resource" uid="uid://fs0gw020broe" path="res://assets/resources/cards/punch_lines/punch_good.tres" id="3_odv4y"]
+[ext_resource type="Resource" uid="uid://bn3tlo5hwl0dd" path="res://assets/resources/cards/punch_lines/punch_short.tres" id="4_tpldw"]
+[ext_resource type="Resource" uid="uid://h3uge0jokdb0" path="res://assets/resources/cards/punch_lines/punch_bad.tres" id="5_rurjd"]
+[ext_resource type="Resource" uid="uid://cdbqreqy8bay7" path="res://assets/resources/cards/punch_lines/punch_poor.tres" id="6_rhbrn"]
+[ext_resource type="Resource" uid="uid://dgftit523hlf5" path="res://assets/resources/cards/punch_lines/punch_smells.tres" id="7_ranux"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="7_ymn31"]
+
+[resource]
+script = ExtResource("7_ymn31")
+name = "Princess"
+character = ExtResource("1_cthau")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("1_1d84o"), ExtResource("2_2no6p"), ExtResource("3_odv4y"), ExtResource("4_tpldw")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("5_rurjd"), ExtResource("6_rhbrn"), ExtResource("7_ranux")])

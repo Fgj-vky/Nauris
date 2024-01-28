@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="event" load_steps=7 format=3 uid="uid://bc52nwilu85jr"]
+
+[ext_resource type="Texture2D" uid="uid://dol71ordvty8d" path="res://assets/sprites/event_characters/merchant.png" id="1_3bigj"]
+[ext_resource type="Resource" uid="uid://cdbqreqy8bay7" path="res://assets/resources/cards/punch_lines/punch_poor.tres" id="2_62yoq"]
+[ext_resource type="Resource" uid="uid://bo71yj0f52nj7" path="res://assets/resources/cards/subject/subject_king.tres" id="2_k4bqj"]
+[ext_resource type="Resource" uid="uid://v8h0v75n05pq" path="res://assets/resources/cards/punch_lines/punch_noMaids.tres" id="3_2nxlv"]
+[ext_resource type="Resource" uid="uid://cfw6jdu5q7qcq" path="res://assets/resources/cards/themes/theme_food.tres" id="3_fv2y4"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="6_vhg60"]
+
+[resource]
+script = ExtResource("6_vhg60")
+name = "Merchant"
+character = ExtResource("1_3bigj")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("2_k4bqj"), ExtResource("3_fv2y4")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("2_62yoq"), ExtResource("3_2nxlv")])

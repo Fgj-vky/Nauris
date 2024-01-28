@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="event" load_steps=8 format=3 uid="uid://cq4thriuwjx1s"]
+
+[ext_resource type="Resource" uid="uid://bwosovl6vhpr4" path="res://assets/resources/cards/subject/subject_blueArmy.tres" id="1_aqfti"]
+[ext_resource type="Texture2D" uid="uid://g70vi61i3io4" path="res://assets/sprites/event_characters/knight.png" id="1_yx15v"]
+[ext_resource type="Resource" uid="uid://dyqsvq37vgrws" path="res://assets/resources/cards/subject/subject_blueKingdom.tres" id="2_x3pjv"]
+[ext_resource type="Resource" uid="uid://cw85hbieefk01" path="res://assets/resources/cards/subject/subject_chef.tres" id="3_d0unv"]
+[ext_resource type="Resource" uid="uid://bpsmlcn5wvkfj" path="res://assets/resources/cards/themes/theme_political.tres" id="3_tleuq"]
+[ext_resource type="Resource" uid="uid://8qfkepmykbe1" path="res://assets/resources/cards/themes/theme_wholesome.tres" id="5_82fun"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="8_rgujg"]
+
+[resource]
+script = ExtResource("8_rgujg")
+name = "Knight"
+character = ExtResource("1_yx15v")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("1_aqfti"), ExtResource("2_x3pjv"), ExtResource("3_tleuq")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("3_d0unv"), ExtResource("5_82fun")])

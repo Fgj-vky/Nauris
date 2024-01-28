@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="event" load_steps=8 format=3 uid="uid://kpti48wjgrog"]
+
+[ext_resource type="Resource" uid="uid://b3n8airm2kbh" path="res://assets/resources/cards/subject/subject_queen.tres" id="1_eejha"]
+[ext_resource type="Texture2D" uid="uid://dd1ytmwf2bt71" path="res://assets/sprites/event_characters/queen.png" id="1_ovbtb"]
+[ext_resource type="Resource" uid="uid://d30sr5mml6573" path="res://assets/resources/cards/subject/subject_peasants.tres" id="2_bb268"]
+[ext_resource type="Resource" uid="uid://6udnpwj8afo1" path="res://assets/resources/cards/subject/subject_religion.tres" id="4_ou0v6"]
+[ext_resource type="Resource" uid="uid://cjc60axfok5m3" path="res://assets/resources/cards/subject/subject_yellowKingdom.tres" id="5_4ew5w"]
+[ext_resource type="Resource" uid="uid://8qfkepmykbe1" path="res://assets/resources/cards/themes/theme_wholesome.tres" id="5_y1pmf"]
+[ext_resource type="Script" path="res://assets/scripts/event.gd" id="6_lxaij"]
+
+[resource]
+script = ExtResource("6_lxaij")
+name = "Queen"
+character = ExtResource("1_ovbtb")
+compatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("1_eejha"), ExtResource("2_bb268"), ExtResource("5_y1pmf")])
+inCompatibleCards = Array[Resource("res://assets/scripts/card_resource.gd")]([ExtResource("4_ou0v6"), ExtResource("5_4ew5w")])

@@ -7,6 +7,8 @@ var loseCallback: Callable
 @onready var kingReactionIconSprite = $"SpeeckBuble/King Reaction Icon"
 @onready var speechBubbule = $SpeeckBuble
 @export var jester: Jester
+@export var ui: Ui
+@onready var log: Log = ui.getLog()
 
 @onready var animation = $AnimationPlayer
 
@@ -25,6 +27,7 @@ var moodTimer:float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	react(0)
+	log.clear()
 	decayRate = maxMoodDecayRateInSeconds * exp(-moodDecayDecay * (global.currentDay - 1))
 	moodTimer = decayRate
 	kingReactionIconSprite.visible = false
@@ -45,6 +48,7 @@ func _process(delta):
 	
 func showReaction(frameId: int, funny: int):
 	print("Reacting " + str(frameId - 5))
+	log.logKingReaction(funny, frameId)
 	
 	if funny > 0:
 		kingReactionIconSprite.visible = true

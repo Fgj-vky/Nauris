@@ -9,3 +9,4 @@ cardName = "Slip"
 combatibleCards = Array[ExtResource("1_8qjqj")]([])
 incombatibleCards = Array[ExtResource("1_8qjqj")]([])
 imageIndex = 24
+logTextVariation = "slipping on the yard"

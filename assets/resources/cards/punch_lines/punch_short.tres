@@ -9,3 +9,4 @@ cardName = "Short"
 combatibleCards = Array[ExtResource("1_lix1w")]([null])
 incombatibleCards = Array[ExtResource("1_lix1w")]([])
 imageIndex = 29
+logTextVariation = "being short"

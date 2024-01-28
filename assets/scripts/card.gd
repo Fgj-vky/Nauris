@@ -15,7 +15,7 @@ var hand: Hand
 
 var tempCardPosition = null
 
-var resource:CardResource
+var resource: CardResource
 
 @onready var iconRect = $TextureRect/Icon
 

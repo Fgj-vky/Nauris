@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://assets/scripts/lights.gd" id="2_kxbei"]
 [ext_resource type="PackedScene" uid="uid://blko38lq4krbm" path="res://assets/models/cam.glb" id="3_m6mkc"]
 [ext_resource type="Script" path="res://assets/scenes/game/sun_controller.gd" id="3_m7ivt"]
-[ext_resource type="Environment" uid="uid://dt158hwqdwbb6" path="res://assets/scenes/game/environment.tres" id="4_fb1sl"]
+[ext_resource type="Environment" uid="uid://s5oe5kx6yuk5" path="res://assets/scenes/game/environment.tres" id="4_fb1sl"]
 [ext_resource type="PackedScene" uid="uid://cdw7jcx8yebvo" path="res://assets/scenes/card_system/hand.tscn" id="5_wjljr"]
 [ext_resource type="PackedScene" uid="uid://bmwoqml1gdse1" path="res://assets/scenes/menu/input_controller.tscn" id="6_ficd1"]
 [ext_resource type="PackedScene" uid="uid://bjkjaws21jax" path="res://assets/models/scene_assets/torch_2.tscn" id="6_pmla6"]
@@ -111,9 +111,10 @@ mainMenuScene = "res://assets/scenes/menu/main_menu.tscn"
 [node name="Ui" parent="." node_paths=PackedStringArray("king") instance=ExtResource("7_r8a3w")]
 king = NodePath("../King")
 
-[node name="King" parent="." node_paths=PackedStringArray("jester") instance=ExtResource("8_ei0tl")]
+[node name="King" parent="." node_paths=PackedStringArray("jester", "ui") instance=ExtResource("8_ei0tl")]
 position = Vector2(1593, 619)
 jester = NodePath("../Jester")
+ui = NodePath("../Ui")
 maxMoodDecayRateInSeconds = 10.0
 moodDecayAmount = 0.1
 

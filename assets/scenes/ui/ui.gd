@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name Ui
 
 @onready var cardHolder = $Cards
 @export var king: King
@@ -14,6 +15,8 @@ var slot3: Card
 @onready var slotPos1 = $MarginContainer/TextureRect/slotPos1
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
+
+@onready var logPanel: Log = $Log
 
 var cardDict = {}
 var cardData = preload("res://assets/Book2.csv").records
@@ -66,10 +69,12 @@ func _process(delta):
 func removeCards():
 	if slot1.resource.cardType != CardResource.CardType.Theme || slot2.resource.cardType != CardResource.CardType.Subject || slot3.resource.cardType != CardResource.CardType.PunchLine:
 		king.react(-0.1)
+		logPanel.log(slot1, slot2, slot3, false)
 	else:
 		var score = calculateMoodScore()
 		king.react(score)
 		gameController.addScore(score)
+		logPanel.log(slot1, slot2, slot3, true)
 	slot1.queue_free()
 	slot1 = null
 	slot2.queue_free()
@@ -115,8 +120,12 @@ func playCards():
 	
 	jester.speak()
 	
+	
 	slot1.cardPlayed()
 	slot2.cardPlayed()
 	slot3.cardPlayed()
 	await get_tree().create_timer(1).timeout
 	removeCards()
+
+func getLog():
+	return logPanel

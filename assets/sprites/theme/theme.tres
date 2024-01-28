@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c02vbctvflx17" path="res://assets/sprites/button2.png" id="1_7dt5c"]
 [ext_resource type="FontFile" uid="uid://bhdk14t2ugv3y" path="res://assets/sprites/theme/Font/GloriaHallelujah.ttf" id="1_7ejms"]
-[ext_resource type="Texture2D" uid="uid://0j2kwgkmcm3r" path="res://assets/sprites/button1.png" id="2_hbsjd"]
+[ext_resource type="Texture2D" uid="uid://dpgj4pflnnefj" path="res://assets/sprites/button1.png" id="2_hbsjd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n7l8r"]
 content_margin_left = 70.0
@@ -77,3 +77,4 @@ Label/constants/outline_size = 37
 Label/fonts/font = ExtResource("1_7ejms")
 Panel/styles/panel = SubResource("StyleBoxTexture_efa7a")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_g5je7")
+RichTextLabel/fonts/normal_font = ExtResource("1_7ejms")

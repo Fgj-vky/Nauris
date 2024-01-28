@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkl345ud31o6m"]
 
 [ext_resource type="PackedScene" uid="uid://dad81si6nesoe" path="res://assets/models/splash.glb" id="1_gk2a2"]
-[ext_resource type="Environment" uid="uid://dt158hwqdwbb6" path="res://assets/scenes/game/environment.tres" id="2_e8qgq"]
+[ext_resource type="Environment" uid="uid://dt158hwqdwbb6" path="res://assets/resources/environment/environment.tres" id="2_e8qgq"]
 
 [node name="Splash3d" type="Node3D"]
 

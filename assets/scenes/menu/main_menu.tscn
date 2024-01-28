@@ -100,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -157.0
-offset_right = 351.0
-offset_bottom = 462.0
+offset_left = -385.5
+offset_top = -140.0
+offset_right = 385.5
+offset_bottom = 479.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -111,9 +111,12 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
-layout_mode = 2
-offset_right = 771.0
-offset_bottom = 487.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
@@ -213,6 +216,7 @@ text = "Credits
 "
 
 [node name="CreditPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

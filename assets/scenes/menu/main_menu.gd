@@ -5,11 +5,12 @@ extends Control
 
 @onready var global = $"/root/Global" as Globals
 @onready var helpPanel = $HelpPanel
+@onready var creditsPanel = $CreditPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	closeHelp()
-	pass # Replace with function body.
+	closeCredits()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,3 +33,9 @@ func showHelp():
 	
 func closeHelp():
 	helpPanel.visible = false
+
+func openCredits():
+	creditsPanel.visible = true
+
+func closeCredits():
+	creditsPanel.visible = false

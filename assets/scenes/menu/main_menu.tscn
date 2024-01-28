@@ -199,8 +199,67 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Ok take me back"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 59.0
+offset_top = -276.0
+offset_right = 435.0
+offset_bottom = -36.0
+grow_vertical = 0
+text = "Credits
+"
+
+[node name="CreditPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+text = "Credits:
+Atte Saari - Programming, \"RTX\" mode
+Jaakkko Sukuvaara - Programming
+Lauri Lyytikäinen - Programming
+Leo Äijälä - Art
+Saarni Holva - Music, audio
+
+"
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CreditPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+theme_override_font_sizes/font_size = 30
+text = "Close"
+
 [connection signal="pressed" from="Help Button" to="." method="showHelp"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/StartRTXButton" to="." method="_on_start_rtx_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Exit Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="HelpPanel/VBoxContainer/Button" to="." method="closeHelp"]
+[connection signal="pressed" from="Button" to="." method="openCredits"]
+[connection signal="pressed" from="CreditPanel/VBoxContainer/Button" to="." method="closeCredits"]

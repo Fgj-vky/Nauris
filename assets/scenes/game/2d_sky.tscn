@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvtt8ok3usfly"]
+[gd_scene load_steps=4 format=3 uid="uid://dky2sn87o4m1l"]
 
 [ext_resource type="Script" path="res://assets/scripts/2d_sky_controller.gd" id="1_cstfm"]
 [ext_resource type="Texture2D" uid="uid://1g2q141odeww" path="res://assets/sprites/sky_assets.png" id="1_ogfte"]

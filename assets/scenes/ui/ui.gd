@@ -7,6 +7,8 @@ class_name Ui
 @onready var gameController = $"../GameController"
 @onready var jester: Jester = $"../Jester" as Jester
 @onready var events: eventSystem = $"../EventSystem" as eventSystem
+@onready var eventPanel = $EventPanel
+@onready var eventlabel = $EventPanel/Label
 
 var slot1: Card
 var slot2: Card
@@ -53,6 +55,7 @@ func checkForSpace():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	formDict()
+	hideEventInfo()
 	
 func formDict():
 	for data in cardData:
@@ -132,3 +135,10 @@ func playCards():
 
 func getLog():
 	return logPanel
+	
+func showEventInfo(name: String):
+	eventPanel.visible = true
+	eventlabel.text = name + " is visiting the King"
+	
+func hideEventInfo():
+	eventPanel.visible = false

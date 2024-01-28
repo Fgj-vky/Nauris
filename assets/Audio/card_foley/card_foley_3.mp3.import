@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dssnv646br76i"
-path="res://.godot/imported/card_foley_3.mp3-c42685cf9ffd9a104bc27799ec2f344b.mp3str"
+path="res://.godot/imported/card_foley_3.mp3-bf46c5a924e0d292d3c6bd35ebe2a69c.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/card_foley/card_foley_3.mp3"
-dest_files=["res://.godot/imported/card_foley_3.mp3-c42685cf9ffd9a104bc27799ec2f344b.mp3str"]
+source_file="res://assets/Audio/card_foley/card_foley_3.mp3"
+dest_files=["res://.godot/imported/card_foley_3.mp3-bf46c5a924e0d292d3c6bd35ebe2a69c.mp3str"]
 
 [params]
 

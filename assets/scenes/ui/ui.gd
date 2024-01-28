@@ -14,6 +14,8 @@ var slot3: Card
 @onready var slotPos2 = $MarginContainer/TextureRect/slotPos2
 @onready var slotPos3 = $MarginContainer/TextureRect/slotPos3
 
+@onready var logPanel: Log = $Log
+
 var cardDict = {}
 var cardData = preload("res://assets/Book2.csv").records
 
@@ -98,6 +100,9 @@ func calculateMoodScore():
 func playCards():
 	
 	jester.speak()
+	
+	logPanel.log(slot1, slot2, slot3)
+	
 	
 	slot1.cardPlayed()
 	slot2.cardPlayed()

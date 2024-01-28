@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtbiyjfudhp2w"]
+
+[ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="1_6hamw"]
+[ext_resource type="Script" path="res://assets/scenes/log.gd" id="2_qfc7s"]
+
+[node name="Log" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_6hamw")
+script = ExtResource("2_qfc7s")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+scroll_active = false
+scroll_following = true
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false

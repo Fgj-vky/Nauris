@@ -56,6 +56,26 @@ script = ExtResource("8_tg2xm")
 setSpeed = 0.15
 setTime = 1.2
 
+[node name="IconsJokes3" type="Sprite2D" parent="Label"]
+position = Vector2(1398, 101)
+rotation = -0.139641
+scale = Vector2(0.751605, 0.594011)
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 7
+script = ExtResource("8_tg2xm")
+
+[node name="IconsJokes2" type="Sprite2D" parent="Label"]
+position = Vector2(48, 89)
+rotation = -0.36846
+scale = Vector2(0.83895, 0.773678)
+texture = ExtResource("4_pqabs")
+hframes = 6
+vframes = 5
+frame = 8
+script = ExtResource("8_tg2xm")
+
 [node name="Help Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -120,26 +140,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Exit
 "
-
-[node name="IconsJokes2" type="Sprite2D" parent="."]
-position = Vector2(98, 106)
-rotation = -0.36846
-scale = Vector2(0.83895, 0.773678)
-texture = ExtResource("4_pqabs")
-hframes = 6
-vframes = 5
-frame = 8
-script = ExtResource("8_tg2xm")
-
-[node name="IconsJokes3" type="Sprite2D" parent="."]
-position = Vector2(1604, 101)
-rotation = -0.139641
-scale = Vector2(0.751605, 0.594011)
-texture = ExtResource("4_pqabs")
-hframes = 6
-vframes = 5
-frame = 7
-script = ExtResource("8_tg2xm")
 
 [node name="SkyAssets" type="Sprite2D" parent="."]
 position = Vector2(131, 604)

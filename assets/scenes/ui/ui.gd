@@ -99,6 +99,9 @@ func calculateMoodScore():
 					bonus += 1
 					print("Found combatible cards: " + resource.cardName + " + " + com)
 	
+	if bonus == 0:
+		bonus = -1
+	
 	if(!events.eventActive):
 		return bonus / 10.0
 	

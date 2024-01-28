@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://k2vwkfocdy64"]
+[gd_scene load_steps=5 format=3 uid="uid://k2vwkfocdy64"]
 
 [ext_resource type="Script" path="res://assets/scenes/ui/ui.gd" id="1_xl6mr"]
 [ext_resource type="Texture2D" uid="uid://dh617frhlv13n" path="res://assets/sprites/card_table.png" id="3_e8p2g"]
 [ext_resource type="PackedScene" uid="uid://dtbiyjfudhp2w" path="res://assets/scenes/log.tscn" id="3_jamuq"]
+[ext_resource type="Theme" uid="uid://be8dl6uo2sx3" path="res://assets/sprites/theme/theme.tres" id="4_mjai5"]
 
 [node name="Ui" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -44,3 +45,20 @@ offset_top = -454.0
 offset_right = 64.0
 offset_bottom = -454.0
 grow_vertical = 0
+
+[node name="EventPanel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 59.0
+offset_right = 464.0
+offset_bottom = 249.0
+theme = ExtResource("4_mjai5")
+
+[node name="Label" type="RichTextLabel" parent="EventPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "aksjbfljkhahlskfhgblajsgbfljhaglsjhfga"

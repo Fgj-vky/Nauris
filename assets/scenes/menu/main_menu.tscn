@@ -121,11 +121,13 @@ alignment = 1
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
 [node name="StartRTXButton" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Start with RTX"
 
@@ -140,6 +142,7 @@ setTime = 1.0
 
 [node name="Exit Button" type="Button" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
 text = "Exit
 "
